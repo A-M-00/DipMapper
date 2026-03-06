@@ -1,0 +1,94 @@
+ABABABABAB:
+  ID: 1
+  area: 3632
+  edges:
+    fleet: [CENTRUM, EDILLION'S_WAY, NOT_NAMED, WESTR1]
+  locs:
+    label:
+    - [0, 0]
+    retreat:
+    - [31.0, 65.0]
+    unit:
+    - [20.0, 111.0]
+  name: ABABABABAB
+  tiles: [1]
+  type: sea
+NOT_NAMED:
+  ID: 2
+  area: 3078
+  edges:
+    army: [CENTRUM, THE_SPOOK]
+    fleet: [ABABABABAB, CENTRUM]
+  locs:
+    label:
+    - [0, 0]
+    retreat:
+    - [0.0, 199.0]
+    unit:
+    - [26.0, 172.0]
+  name: NOT_NAMED
+  tiles: [2]
+  type: coast
+THE_SPOOK:
+  ID: 3
+  area: 2750
+  edges:
+    army: [CENTRUM, EDILLION'S_WAY, NOT_NAMED]
+  locs:
+    label:
+    - [0, 0]
+    retreat:
+    - [99.0, 140.0]
+    unit:
+    - [79.0, 171.0]
+  name: THE_SPOOK
+  tiles: [3]
+  type: land
+WESTR1:
+  ID: 4
+  area: 2028
+  edges:
+    army: [EDILLION'S_WAY]
+    fleet: [ABABABABAB, EDILLION'S_WAY]
+  locs:
+    label:
+    - [0, 0]
+    retreat:
+    - [0.0, 41.0]
+    unit:
+    - [20.0, 20.0]
+  name: WESTR1
+  tiles: [4]
+  type: coast
+EDILLION'S_WAY:
+  ID: 5
+  area: 3986
+  edges:
+    army: [CENTRUM, THE_SPOOK, WESTR1]
+    fleet: [ABABABABAB, CENTRUM, WESTR1]
+  locs:
+    label:
+    - [0, 0]
+    retreat:
+    - [99.0, 60.0]
+    unit:
+    - [71.0, 28.0]
+  name: EDILLION'S_WAY
+  tiles: [5]
+  type: coast
+CENTRUM:
+  ID: 6
+  area: 3520
+  edges:
+    army: [EDILLION'S_WAY, NOT_NAMED, THE_SPOOK]
+    fleet: [ABABABABAB, EDILLION'S_WAY, NOT_NAMED]
+  locs:
+    label:
+    - [0, 0]
+    retreat:
+    - [64.0, 78.0]
+    unit:
+    - [65.0, 112.0]
+  name: CENTRUM
+  tiles: [6]
+  type: coast

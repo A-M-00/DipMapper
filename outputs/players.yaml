@@ -1,0 +1,44 @@
+Northern League:
+  capital: not named
+  color: '#26e111'
+  demonym: Northern Leagueian
+  home: [not named]
+  name: Northern League
+  territory: [not named, The spook]
+  units:
+  - loc: not named
+    type: !!python/object/apply:numpy._core.multiarray.scalar
+    - !!python/object/apply:numpy.dtype
+      args: [U4, false, true]
+      state: !!python/tuple [3, <, null, null, null, 16, 4, 8]
+    - !!binary |
+      YQAAAHIAAABtAAAAeQAAAA==
+  - loc: The spook
+    type: !!python/object/apply:numpy._core.multiarray.scalar
+    - !!python/object/apply:numpy.dtype
+      args: [U4, false, true]
+      state: !!python/tuple [3, <, null, null, null, 16, 4, 8]
+    - !!binary |
+      TgAAAG8AAABuAAAAZQAAAA==
+Lorent:
+  capital: Edillion's Way
+  color: '#e11165'
+  demonym: Lorentian
+  home: [Edillion's Way]
+  name: Lorent
+  territory: [WestR1, Edillion's Way]
+  units:
+  - loc: WestR1
+    type: !!python/object/apply:numpy._core.multiarray.scalar
+    - !!python/object/apply:numpy.dtype
+      args: [U4, false, true]
+      state: !!python/tuple [3, <, null, null, null, 16, 4, 8]
+    - !!binary |
+      TgAAAG8AAABuAAAAZQAAAA==
+  - loc: Edillion's Way
+    type: !!python/object/apply:numpy._core.multiarray.scalar
+    - !!python/object/apply:numpy.dtype
+      args: [U5, false, true]
+      state: !!python/tuple [3, <, null, null, null, 20, 4, 8]
+    - !!binary |
+      ZgAAAGwAAABlAAAAZQAAAHQAAAA=

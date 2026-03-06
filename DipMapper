@@ -375,7 +375,7 @@ def build_output(combined_region_information):
             label_to_name
         )
         
-        if(edges.len == 1):
+        if(len(edges) == 1):
             print(f"Warning: province {province_name} has only one neighbour. Might be a decorative element, or a special province you want to edit manually.")
 
 
@@ -470,7 +470,7 @@ def build_player_file(combined_region_information, filename):
 def build_map_file_digidiplo(combined_region_information, filename):
     # Builds all required files for DigiDiplo: graph, players, regions, and areas files. Areas and tiles are assumed to be the same.
     output = build_output(combined_region_information)  # main graph.yaml file
-    build_player_file(combined_region_information, "players.yaml")
+    build_player_file(combined_region_information, "outputs/players.yaml")
     with open(filename, "w") as f:
         yaml.dump(
             output,
@@ -480,8 +480,8 @@ def build_map_file_digidiplo(combined_region_information, filename):
         )
     regions = bg_labels.astype(np.uint16)
     img = Image.fromarray(regions, mode='I;16')  #16bit to handle 300+ province maps
-    img.save("regions.png")
-    img.save("tiles.png")
+    img.save("outputs/regions.png")
+    img.save("outputs/tiles.png")
 
 def build_map_file_realpolitik(combined_region_information, filename):
     # This function can be used to convert the combined_region_information into the map file format used by Realpolitik
@@ -576,7 +576,7 @@ def build_map_file_realpolitik(combined_region_information, filename):
     
 
 if __name__ == '__main__':
-    background_image, names_image, centers_image, units_image, decorations_image, bg_labels, ndlabels = load_images_and_bg_labels("test_bg.png", "test_name.png", "test_dots.png", "test_units.png", "test_decorations.png")
+    background_image, names_image, centers_image, units_image, decorations_image, bg_labels, ndlabels = load_images_and_bg_labels("assets/background.png", "assets/names.png", "assets/centers.png", "assets/units.png", "assets/decorations.png")
     
     plot_region_info(bg_labels)
     region_centers = parse_centers(bg_labels, centers_image)
@@ -589,6 +589,7 @@ if __name__ == '__main__':
                                                units_image,
                                                bg_labels,
                                                ndlabels)
-    build_map_file_digidiplo(region_information, "graph.yaml")
+    build_map_file_digidiplo(region_information, "outputs/graph.yaml")
+    #build_map_file_realpolitik(region_information, "outputs/map_file.map")
         
     print("Success")

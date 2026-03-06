@@ -1,0 +1,594 @@
+import json
+import math
+import sys
+from json import JSONEncoder
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pytesseract
+from PIL import Image
+from scipy import ndimage
+from skimage.measure import regionprops
+from skimage.segmentation import find_boundaries, expand_labels
+import yaml
+
+COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colours.
+    (17, 53, 225): "ocean",
+    (252, 201, 201): "neutral",
+    (96, 96, 130): "island", #neutral island specifically
+    (38, 225, 17): "Northern League",
+    (225, 17, 101): "Lorent",
+    (104, 182, 255): "Gnomish Hierarchy",
+    (60, 82, 189): "Busilar",
+    (132, 130, 132): "Anbennar",
+    (159, 50, 255): "Grombar",
+    (0, 101, 122): "Cyranvar",
+    (91, 127, 0): "Konolkhatep",
+    (255, 216, 0): "Jaddanzuir",
+    (157, 30, 30): "Kalysto",
+    (159, 50, 255): "Danggun",
+    (0, 101, 122): "Dragon Command",
+    (91, 127, 0): "Khatalashya",
+    (255, 216, 0): "Qasr Baashidi",
+    (157, 30, 30): "Melakmengi",
+    (159, 50, 255): "Nur Dhanaenn",
+    (0, 101, 122): "Ameion",
+    (91, 127, 0): "Sarda Empire",
+    (255, 216, 0): "Vanbury Steel Guild",
+    (157, 30, 30): "Triarchy",
+    (36, 225, 17): "Northern League island",
+    (215, 17, 101): "Lorent island",
+    (124, 182, 255): "Gnomish Hierarchy island",
+    (61, 82, 189): "Busilar island",
+    (122, 130, 132): "Anbennar island",
+    (119, 50, 255): "Grombar island",
+    (2, 101, 122): "Cyranvar island",
+    (11, 127, 0): "Konolkhatep island",
+    (235, 216, 0): "Jaddanzuir island",
+    (137, 30, 30): "Kalysto island",
+    (129, 50, 255): "Danggun island",
+    (1, 101, 122): "Dragon Command island",
+    (92, 127, 0): "Khatalashya island",
+    (235, 216, 0): "Qasr Baashidi island",
+    (137, 30, 30): "Melakmengi island",
+    (129, 50, 255): "Nur Dhanaenn island",
+    (1, 101, 122): "Ameion island",
+    (41, 127, 0): "Sarda Empire island",
+    (245, 216, 0): "Vanbury Steel Guild island",
+    (137, 30, 30): "Triarchy island",
+}
+
+POWER_INITIALS_MAPPING = { # Relevant only for Realpolitik output, can be ignored if using DigiDiplo.
+    "Northern League": 'R',
+    "Lorent": 'L',
+    "Gnomish Hierarchy": 'H',
+    "Busilar": 'B',
+    "Anbennar": 'A',
+    "Grombar": 'G',
+    "Cyranvar": 'W',
+    "Konolkhatep": 'K',
+    "Jaddanzuir": 'J',
+    "Kalysto": 'Y',
+    "Danggun": 'D',
+    "Dragon Command": 'C',
+    "Khatalashya": 'Z',
+    "Qasr Baashidi": 'Q',
+    "Melakmengi": 'M',
+    "Nur Dhanaenn": 'N',
+    "Ameion": 'I',
+    "Sarda Empire": 'S',
+    "Vanbury Steel Guild": 'V',
+    "Triarchy": 'T',
+}
+
+THRESHOLD_SIZE = 15 # Threshold between fleet size and army size in pixels.
+LARGER_UNIT = "army" #invert these if your fleets are larger than armies
+SMALLER_UNIT = "fleet" #invert these if your fleets are larger than armies
+
+custom_config = r'-c tessedit_char_whitelist="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345\'"'  # Characters used in province names. Default is letters, spostrophe, and numbers 1-5. Add any extra your variant may have.
+
+SPACE_REPLACER = "_" # Since spaces can cause issues in adjacency lists, we replace them with underscores. Change this if you want a different replacer.
+
+MULTICOLOUR_PROVINCES = False # Set to True if your map uses multiple colors per province (e.g. a border color). Might make province recognition less reliable in some parts, especially when it comes to connecting islands.
+
+def is_ocean(region_type):
+    return region_type == "ocean"
+def is_island(region_type):
+    return region_type.endswith("island")
+def is_land(region_type):
+    return not (is_ocean(region_type) or is_island(region_type))
+def rgb_to_hex(rgb):
+    return '#{:02x}{:02x}{:02x}'.format(*rgb)
+
+def color_aware_label(image):  
+    #Labels connected regions of identical color with unique labels, unlike ndimage.label which would label different colored parts of the same province as one region. Only used if MULTICOLOUR_PROVINCES is True.
+    color_ids = (
+    image[..., 0].astype(np.int64) << 16 |
+    image[..., 1].astype(np.int64) << 8  |
+    image[..., 2].astype(np.int64)
+    )
+    mask = color_ids != 0
+    structure = np.ones((3, 3))
+    labels = np.zeros_like(color_ids)
+    current_label = 1
+    unique_ids = np.unique(color_ids[mask])
+
+    for uid in unique_ids:
+        region_mask = color_ids == uid
+        labeled, num = ndimage.label(region_mask, structure=structure)
+
+        for i in range(1, num + 1):
+            labels[labeled == i] = current_label
+            current_label += 1
+    return labels, current_label - 1
+
+def plot_region_info(labels): 
+    # Utility function to visualize the labeled regions and their properties. Can be helpful for debugging and ensuring that the labeling process worked correctly.
+    fig, ax = plt.subplots()
+    ax.imshow(labels, cmap=plt.cm.gray)
+    regions = regionprops(labels)
+    for props in regions:
+        if (props.area_filled < 10):
+            print(f"{props.label} is a tiny region - check for pixel errors", file=sys.stderr)
+        y0, x0 = props.centroid
+        orientation = props.orientation
+
+        x1 = x0 + math.cos(orientation) * 0.5 * props.axis_minor_length
+        y1 = y0 - math.sin(orientation) * 0.5 * props.axis_minor_length
+        x2 = x0 - math.sin(orientation) * 0.5 * props.axis_major_length
+        y2 = y0 - math.cos(orientation) * 0.5 * props.axis_major_length
+
+        # ax.plot((x0, x1), (y0, y1), '-r', linewidth=2.5)
+        # ax.plot((x0, x2), (y0, y2), '-r', linewidth=2.5)
+        ax.plot(x0, y0, '.g', markersize=15)
+        ax.text(x0 + 5, y0 + 5, f"{props.label}", fontsize='x-large',
+                bbox={"facecolor": "red", "alpha": 0.5})
+
+        minr, minc, maxr, maxc = props.bbox
+        bx = (minc, maxc, maxc, minc, minc)
+        by = (minr, minr, maxr, maxr, minr)
+        # ax.plot(bx, by, '-b', linewidth=2.5)
+
+    fig.set_dpi(200)
+    ax.axis((0, labels.shape[1], labels.shape[0], 0))
+    plt.savefig("region_plot.png", dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+def load_images_and_bg_labels(background_fname, names_fname, centers_fname, units_fname, decorations_fname):
+    # Loads the input images and computes the background labels. All images other than the background are expected to have a transparent background. Units and decorations are optional.
+    background_image = np.asarray(Image.open(background_fname).convert('RGB'))
+    names_image = np.asarray(Image.open(names_fname).convert('RGBA'))
+    centers_image = np.asarray(Image.open(centers_fname).convert('RGBA'))
+    units_image = np.asarray(Image.open(units_fname).convert('RGBA'))
+    decorations_image = np.asarray(Image.open(decorations_fname).convert('RGBA'))
+    assert background_image is not None, "bg file could not be read"
+    assert names_image is not None, "names file could not be read"
+    assert centers_image is not None, "centers file could not be read"
+    if(MULTICOLOUR_PROVINCES):
+        bg_labels, ndlabels = ndimage.label((background_image != [0, 0, 0]).any(-1), structure=np.ones((3, 3)))
+    else:
+        bg_labels, ndlabels = color_aware_label(background_image)
+    return background_image, names_image, centers_image, units_image, decorations_image, bg_labels, ndlabels
+
+def parse_names(labeled_names, ndlabels, names_image):
+    # Uses pytesseract to parse province names from the names image, using the labeled regions to isolate each name. Make sure names don't overlap between provinces, or you might need to edit those manually.
+    name_regions = regionprops(labeled_names)
+    columns = 6
+    names_to_show = min(ndlabels, 30)
+    fig, ax = plt.subplots(math.ceil(names_to_show/columns), min(columns, names_to_show), squeeze=False)
+    parsed_names = {}
+    for props in name_regions:
+        minr, minc, maxr, maxc = props.bbox
+        h, w = names_image.shape[:2]
+        r0 = max(0, minr - 5)
+        r1 = min(h, maxr + 5)
+        c0 = max(0, minc - 5)
+        c1 = min(w, maxc + 5)
+
+        name_image = names_image[r0:r1, c0:c1]
+        #name_image = names_image[minr - 5:maxr + 5, minc - 5:maxc + 5, ...]
+        name = pytesseract.image_to_string(name_image, lang='eng', config=custom_config)
+        name = " ".join(name.split())
+        parsed_names[props.label] = name.strip()
+        if props.label - 1 < names_to_show:
+            ax_current = ax[(props.label - 1) // columns][(props.label - 1) % columns]
+            ax_current.imshow(name_image)
+            ax_current.set_title(name)
+            ax_current.set_xlabel(props.label)
+            ax_current.set_xticks([])
+            ax_current.set_yticks([])
+    fig.tight_layout()
+    fig.set_dpi(200)
+    plt.show()
+    return parsed_names
+
+def parse_centers(bg_labels, centers_image):
+    return np.setdiff1d(np.unique(bg_labels * (centers_image[:, :, 3] != 0)), [0])
+
+def identify_region_types(background_image, bg_labels, ndlabels):
+    color_mapping = {}
+    for label_number in range(1, ndlabels+1):
+        colors = np.unique(background_image[bg_labels == label_number], axis=0)
+        assert len(colors) == 1, f"{label_number} is not one solid color: {colors}"
+        assert tuple(colors[0]) in COLOR_REGION_TYPE_MAPPING, f"{tuple(colors[0])} is not in mapping (region {label_number})"
+        color_mapping[label_number] = COLOR_REGION_TYPE_MAPPING[tuple(colors[0])]
+    return color_mapping
+
+def find_neighbors(labels, ndlabels):
+    expanded_labels = expand_labels(labels, distance=6)
+    neighbors = {}
+    for label_number in range(1, ndlabels+1):
+        boundaries = find_boundaries(expanded_labels == label_number, mode='outer', background=False)
+        neighbors[label_number] = np.setdiff1d(np.unique(expanded_labels * boundaries), [0])
+    return neighbors
+
+def parse_units(bg_labels, ndlabels, unit_labels, ndunits):
+    province_units = np.full(ndlabels, None, dtype="<U5")
+    for unit_id in range(1, ndunits + 1):
+        unit_mask = (unit_labels == unit_id)  # Mask for the current unit
+        unit_area = np.sum(unit_mask)
+
+        if unit_area < THRESHOLD_SIZE:
+            unit_type = SMALLER_UNIT
+        else:
+            unit_type = LARGER_UNIT
+
+        overlap_count = np.zeros(ndlabels, dtype=int)
+        for province_id in range(1, ndlabels + 1):
+            province_mask = (bg_labels == province_id)  # Mask for the current province
+            overlap_pixels = np.sum(np.logical_and(unit_mask, province_mask))  # Intersection of unit and province
+            overlap_count[province_id - 1] = overlap_pixels
+
+        best_province_id = np.argmax(overlap_count)  # Index of the province with max overlap
+        province_units[best_province_id] = unit_type
+    return province_units
+
+def generate_map_data(background_image, names_image, centers_image, units_image, bg_labels, ndlabels):
+    name_labels = bg_labels * (names_image[:, :, 3] != 0)
+    unit_labels, ndunits = ndimage.label((units_image[:, :, 3] != 0), structure=np.ones((3, 3)))
+
+    print("Finding neighbors")
+    region_neighbors = find_neighbors(bg_labels, ndlabels)
+    print("Finding region names")
+    region_names = parse_names(name_labels, ndlabels, names_image)
+    print("Finding centers")
+    region_centers = parse_centers(bg_labels, centers_image)
+    print("Finding region types")
+    region_types = identify_region_types(background_image, bg_labels, ndlabels)
+    print("Finding units")
+    region_units = parse_units(bg_labels, ndlabels, unit_labels, ndunits)
+
+    combined_region_information = {
+        label: {
+            "name": region_names.get(label, "not named"),
+            "adjacency": region_neighbors[label],
+            "type": region_types[label],
+            "is_supply_center": label in region_centers,
+            "unit": region_units[label-1]  # province_units is 0-indexed while labels start at 1
+        } for label in range(1, ndlabels+1)}
+
+    print(combined_region_information)
+
+    return combined_region_information, unit_labels, region_units
+
+def determine_type(label, info, combined_region_information):
+    if is_island(info["type"]):
+        return "coast"
+
+    if is_land(info["type"]):
+        for neighbor_label in info["adjacency"]:
+            if is_ocean(combined_region_information[neighbor_label]["type"]):
+                return "coast"
+            
+    if is_ocean(info["type"]):
+        return "sea"
+
+    return "land"
+
+def compute_edges(label, info, combined_region_information, label_to_name, SPACE_REPLACER="_"):
+    army_adjacencies = []
+    fleet_adjacencies = []
+
+    for neighbor_label in info["adjacency"]:
+        neighbor = combined_region_information[neighbor_label]
+        neighbor_name = label_to_name[neighbor_label]
+
+        # Army movement: Between land or island provinces. 
+        if (is_land(info["type"]) or is_island(info["type"])) and (is_land(neighbor["type"]) or is_island(neighbor["type"])):
+            army_adjacencies.append(neighbor_name.replace(" ", SPACE_REPLACER).upper())
+
+        # Fleet case A: Either is ocean or island
+        if (is_ocean(info["type"]) or is_ocean(neighbor["type"]) or is_island(info["type"]) or is_island(neighbor["type"])):
+            fleet_adjacencies.append(neighbor_name.replace(" ", SPACE_REPLACER).upper())
+
+        # Fleet case B: land-land sharing a sea or island border. Does not account for coasts or small "coast-breaker" provinces, but should work for most cases and is more reliable than the alternatives.
+        elif is_land(info["type"]) and is_land(neighbor["type"]):
+            my_seas = {
+                n for n in info["adjacency"]
+                if is_ocean(combined_region_information[n]["type"])
+                or is_island(combined_region_information[n]["type"])
+            }
+
+            neighbor_seas = {
+                n for n in neighbor["adjacency"]
+                if is_ocean(combined_region_information[n]["type"])
+                or is_island(combined_region_information[n]["type"])
+            }
+
+            if my_seas.intersection(neighbor_seas):
+                fleet_adjacencies.append(neighbor_name.replace(" ", SPACE_REPLACER).upper())
+
+    if(len(army_adjacencies) == 0):
+        return {
+            "fleet": sorted(set(fleet_adjacencies))
+        }
+    if(len(fleet_adjacencies) == 0):
+        return {
+            "army": sorted(set(army_adjacencies)),
+        }
+
+    return {
+        "army": sorted(set(army_adjacencies)),
+        "fleet": sorted(set(fleet_adjacencies))
+    }
+
+def build_dico(combined_region_information):
+    # Create lookup from label to name
+    label_to_name = {
+        label: info["name"]
+        for label, info in combined_region_information.items()
+    }
+    return label_to_name
+
+def build_output(combined_region_information):
+    output = {}
+    label_to_name = build_dico(combined_region_information)
+
+    counts = np.bincount(bg_labels.ravel())
+
+    for label, info in combined_region_information.items():
+        def find_retreat(radius):
+            rr, cc = np.ogrid[:h, :w]
+            exclusion = (rr - y)**2 + (cc - x)**2 <= radius**2
+
+            retreat_mask = province_mask.copy()
+            retreat_mask[exclusion] = False
+
+            if np.any(retreat_mask):
+                distance2 = ndimage.distance_transform_edt(retreat_mask)
+                if np.max(distance2) > 0:
+                    return np.unravel_index(np.argmax(distance2), distance2.shape)
+
+            return None
+        
+        province_name = label_to_name[label].replace(" ", SPACE_REPLACER).upper()
+
+        province_type = determine_type(label, info, combined_region_information)
+
+        if(province_name == "not named"):
+            print(f"Warning: province {label} has no name, check the names image and whether you didn't accidentally put a decorative element in the basemap")
+
+        edges = compute_edges(
+            label,
+            info,
+            combined_region_information,
+            label_to_name
+        )
+        
+        if(edges.len == 1):
+            print(f"Warning: province {province_name} has only one neighbour. Might be a decorative element, or a special province you want to edit manually.")
+
+
+        province_mask = (bg_labels == label)
+        distance = ndimage.distance_transform_edt(province_mask) # distance to edge of province, used to find good unit placement and retreat points
+
+        h, w = distance.shape
+        rr, cc = np.indices((h, w))
+        dist_to_edge = np.minimum.reduce([rr, cc, h - 1 - rr, w - 1 - cc]) # distance to edge of map, used to avoid placing units too close to the edge where they might be cut off
+
+        effective_distance = np.minimum(distance, dist_to_edge)
+        y, x = np.unravel_index(np.argmax(effective_distance), effective_distance.shape)
+        unit_loc = [float(y), float(x)] # For some reason digi-diplo expects [y,x] instead of [x,y]
+
+        y2, x2 = find_retreat(20) # 20-pixel buffer between main unit placement and retreat
+        if y2 is None or x2 is None:
+            y2, x2 = find_retreat(15) # If province too small, try a smaller buffer. Might cause slight overlap for large unit images, but at that point make larger provinces
+
+        if y2 is None or x2 is None:
+            # Dilate province slightly to allow outside placement if still too small
+            expanded = ndimage.binary_dilation(province_mask, iterations=10)
+
+            rr, cc = np.indices((h, w))
+            exclusion = (rr - y)**2 + (cc - x)**2 <= 15**2
+
+            retreat_mask = expanded.copy()
+            retreat_mask[exclusion] = False
+
+            distance2 = ndimage.distance_transform_edt(retreat_mask)
+            y2, x2 = np.unravel_index(np.argmax(distance2), distance2.shape)
+
+        retreat = [float(y2), float(x2)]
+        area = int(counts[label])
+
+        output[province_name] = {
+            "ID": label,
+            "area": area,  
+            "edges": edges,
+            "locs": {
+                "label": [[0, 0]],       # placeholder. Not sure what this is used for.
+                "retreat": [retreat],
+                "unit": [unit_loc],
+            },
+            "name": province_name,
+            "tiles": [label],          
+            "type": province_type
+        }
+
+    return output
+
+def build_player_file(combined_region_information, filename):
+    yaml_output = {}
+    for colour, power in COLOR_REGION_TYPE_MAPPING.items():
+        if(power.endswith("island") or power == "neutral" or power == "ocean"):
+            continue
+        territory = [
+            info["name"]
+            for info in combined_region_information.values()
+            if info["type"].startswith(power)
+        ]
+        centres = [
+            info["name"]
+            for info in combined_region_information.values()
+            if info["type"].startswith(power) and info["is_supply_center"]
+        ]
+        units = [
+            {"loc": info["name"], "type": info["unit"]} 
+            for info in combined_region_information.values() 
+            if info["unit"] is not None and info["type"].startswith(power)
+        ]
+        if (len(centres) == 0):
+            print(f"Warning: no supply center found for {power}, skipping player creation")
+            continue
+        yaml_output[power] = {
+            "capital": centres[0],   # Arbitrary centre, set manually if your variant uses capital rules
+            "color": rgb_to_hex(colour),
+            "demonym": power + "ian",   # Too varied to infer consistently, change manually
+            "home": centres,   # Assumes cores = starting centres. True for most variants, edit manually if not for yours
+            "name": power,
+            "territory": territory,
+            "units": units
+        }
+
+    with open(filename, "w") as f:
+        yaml.dump(
+            yaml_output,
+            f,
+            sort_keys=False, 
+            default_flow_style=None 
+        )
+
+def build_map_file_digidiplo(combined_region_information, filename):
+    # Builds all required files for DigiDiplo: graph, players, regions, and areas files. Areas and tiles are assumed to be the same.
+    output = build_output(combined_region_information)  # main graph.yaml file
+    build_player_file(combined_region_information, "players.yaml")
+    with open(filename, "w") as f:
+        yaml.dump(
+            output,
+            f,
+            sort_keys=False,
+            default_flow_style=None  
+        )
+    regions = bg_labels.astype(np.uint16)
+    img = Image.fromarray(regions, mode='I;16')  #16bit to handle 300+ province maps
+    img.save("regions.png")
+    img.save("tiles.png")
+
+def build_map_file_realpolitik(combined_region_information, filename):
+    # This function can be used to convert the combined_region_information into the map file format used by Realpolitik
+    def get_region_letters(region):
+        letters = ""
+        
+        # Base type
+        if region["type"] == "ocean":
+            letters += "w"
+        elif region["type"].endswith("island"):
+            letters += "i"
+        else:
+            letters += "l"
+        
+        # Supply center modifiers
+        if region["is_supply_center"]:
+            if region["type"] == "neutral" or region["type"] == "island":
+                letters += "x"
+            else:
+                letters += POWER_INITIALS_MAPPING.get(region["type"], "?")  # ? for unknown power (shouldn't happen)
+        return letters
+    
+    # Create lookup from label to name
+    label_to_name = build_dico(combined_region_information)
+
+    with open(filename, "w") as f:
+
+        # Section 1: Tiles
+        for label, info in combined_region_information.items():
+            name = info["name"]
+            abbr = name.replace(" ", SPACE_REPLACER)
+            letters = get_region_letters(info)
+            f.write(f"{name}, {letters} {abbr}\n")
+
+        # Separator
+        f.write("-1\n")
+
+        # Section 2: Adjacencies
+        for label, info in combined_region_information.items():
+            print("\nProcessing adjacencies for", info["name"])
+            name = info["name"]
+            neighbors = info["adjacency"]
+
+            army_adjacencies = []
+            fleet_adjacencies = []
+
+            for neighbor_label in neighbors:
+                neighbor = combined_region_information[neighbor_label]
+                neighbor_name = neighbor["name"]
+
+                # Army adjacency (mv)
+                if is_land(info["type"]) and is_land(neighbor["type"]):
+                    army_adjacencies.append(neighbor_name.replace(" ", SPACE_REPLACER))
+                # Fleets case A: either province is sea
+                if is_ocean(info["type"]) or is_ocean(neighbor["type"]):
+                    fleet_adjacencies.append(neighbor_name.replace(" ", SPACE_REPLACER))
+                # Case B: both land AND share a bordering sea
+                elif is_land(info["type"]) and is_land(neighbor["type"]):
+                # Find sea/island neighbors of both provinces
+                    my_seas = {
+                        n for n in info["adjacency"]
+                        if combined_region_information[n]["type"] == "ocean" or is_island(combined_region_information[n]["type"])
+                    }
+                    neighbor_seas = {
+                        n for n in neighbor["adjacency"]
+                        if combined_region_information[n]["type"] == "ocean" or is_island(combined_region_information[n]["type"])
+                    }
+
+                    # If they share at least one sea province
+                    if my_seas.intersection(neighbor_seas):
+                        fleet_adjacencies.append(neighbor_name.replace(" ", SPACE_REPLACER))
+
+            # Write results
+            if army_adjacencies:
+                f.write(f"{name}-mv: {' '.join(army_adjacencies)}\n")
+
+            if fleet_adjacencies:
+                f.write(f"{name}-xc: {' '.join(fleet_adjacencies)}\n")
+
+        # Separator
+        f.write("-1\n")
+
+        # SECTION 3: Supply Center Order
+        supply_centers = [
+            info["name"]
+            for info in combined_region_information.values()
+            if info["is_supply_center"]
+        ]
+
+        for sc in supply_centers:
+            f.write(f"{sc}\n")
+    
+
+if __name__ == '__main__':
+    background_image, names_image, centers_image, units_image, decorations_image, bg_labels, ndlabels = load_images_and_bg_labels("test_bg.png", "test_name.png", "test_dots.png", "test_units.png", "test_decorations.png")
+    
+    plot_region_info(bg_labels)
+    region_centers = parse_centers(bg_labels, centers_image)
+    print(ndlabels)
+    print(region_centers, len(region_centers))
+
+    region_information, unit_labels, region_units = generate_map_data(background_image,
+                                               names_image,
+                                               centers_image,
+                                               units_image,
+                                               bg_labels,
+                                               ndlabels)
+    build_map_file_digidiplo(region_information, "graph.yaml")
+        
+    print("Success")

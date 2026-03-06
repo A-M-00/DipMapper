@@ -412,7 +412,7 @@ def build_output(combined_region_information):
 
         output[province_name] = {
             "ID": label,
-            "area": area,  
+            "area": area,  # size of the province in pixels. Unsure what it's used for.
             "edges": edges,
             "locs": {
                 "label": [[0, 0]],       # placeholder. Not sure what this is used for.

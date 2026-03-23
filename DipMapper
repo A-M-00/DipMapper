@@ -13,6 +13,8 @@ from skimage.measure import regionprops
 from skimage.segmentation import find_boundaries, expand_labels
 import yaml
 import re
+from collections import defaultdict
+from fuzzywuzzy import fuzz, process
 
 COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colours.
     (205, 214, 213): "ocean",
@@ -91,13 +93,13 @@ SMALLER_UNIT = "fleet" #invert these if your fleets are larger than armies
 
 DELETE_TINY_REGIONS = True # Set to True to automatically delete tiny regions (less than 10 pixels) that are likely the result of errors in the image. If your map has legitimate tiny provinces, set this to False and check the generated region plot for any red-marked tiny regions that you might want to edit manually
 
-PLOT_ONLY = False # Set to True to only plot the labeled regions and their properties, without generating any output files. Useful for seeing whether your background gets read correctly (especially relevant if you have thin borders and/or decorative elements).
+DEBUG = False # Set to True to only plot the labeled regions and their properties, without generating any output files. Useful for seeing whether your background gets read correctly (especially relevant if you have thin borders and/or decorative elements).
 
 DIGIDIPLO = True # Set to False to generate a Realpolitik map file instead of DigiDiplo. Note that currently, player files are only generated for DigiDiplo.
 
-custom_config = r'-c tessedit_char_whitelist="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345\'"'  # Characters used in province names. Default is letters, spostrophe, and numbers 1-5. Add any extra your variant may have.
+custom_config = r'-c tessedit_char_whitelist="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345\'" ""'  # Characters used in province names. Default is letters, spostrophe, and numbers 1-5. Add any extra your variant may have.
 
-SPACE_REPLACER = "_" # Since spaces can cause issues in adjacency lists, we replace them with underscores. Change this if you want a different replacer.
+SPACE_REPLACER = "" # Since spaces can cause issues in adjacency lists, we remove them. Change this if you want to for example use underscores instead. Note this sometimes causes issues with pytorch at small pixelated font sizes.
 
 FIRST_HALF = False # Set to True to save the combined_region_information after processing the first half of the map (useful for large maps that cause memory issues, or if you just want to edit the output manually before generating the final files).
 
@@ -126,6 +128,17 @@ def json_converter(o):
         return list(o)
     raise TypeError(f"Object of type {type(o)} is not JSON serializable")
 
+def load_region_information(path="assets/halfway.json"):
+    with open(path) as f:
+        data = json.load(f)
+
+    data = {int(k): v for k, v in data.items()}
+
+    for region in data.values():
+        region["adjacency"] = set(region["adjacency"])
+
+    return data
+
 def color_aware_label(image):  
     #Labels connected regions of identical color with unique labels. Only used if MULTICOLOUR_PROVINCES is False.
     color_ids = (
@@ -150,6 +163,7 @@ def color_aware_label(image):
 
 def plot_region_info(labels): 
     # Utility function to visualize the labeled regions and their properties. Can be helpful for debugging and ensuring that the labeling process worked correctly.
+    print("Plotting region info")
     fig, ax = plt.subplots(figsize = (40, 27))
     ax.imshow(labels, cmap=plt.cm.gray)
     regions = regionprops(labels)
@@ -187,7 +201,7 @@ def plot_region_info(labels):
 
     fig.set_dpi(200)
     ax.axis((0, labels.shape[1], labels.shape[0], 0))
-    plt.savefig("outputs/region_plot.png", dpi=200, bbox_inches="tight")
+    plt.savefig("outputs/region_plot.png", dpi=175, bbox_inches="tight")
     plt.close(fig)
     plt.show()
 
@@ -207,26 +221,70 @@ def load_images_and_bg_labels(background_fname, names_fname, centers_fname, unit
         bg_labels, ndlabels = color_aware_label(background_image)
     return background_image, names_image, centers_image, units_image, decorations_image, bg_labels, ndlabels
 
-def parse_names(labeled_names, ndlabels, names_image):
+def parse_names_debug(labeled_names, ndlabels, names_image):
     # Uses pytesseract to parse province names from the names image, using the labeled regions to isolate each name. Make sure names don't overlap between provinces, or you might need to edit those manually.
+    print("compiling name guesses")
     name_regions = regionprops(labeled_names)
 
     parsed_names = {}
+    with open("outputs/namelist.txt", "w") as file:
+        for props in name_regions:
+            minr, minc, maxr, maxc = props.bbox
+            h, w = names_image.shape[:2]
+            pad = 10
+            r0 = max(0, minr - pad)
+            r1 = min(h, maxr + pad)
+            c0 = max(0, minc - pad)
+            c1 = min(w, maxc + pad)
+
+            name_image = names_image[r0:r1, c0:c1]
+            #name_image = names_image[minr - 5:maxr + 5, minc - 5:maxc + 5, ...]
+            name = pytesseract.image_to_string(name_image, lang='eng', config=custom_config) # Set to recognise latin characters, with no language bias. If your names are all in English, you can probably get slightly better performance out of lang='eng' instead. I just used this because mine has fantasy names.
+            name = name.strip()
+            name = re.sub(r"\s+", SPACE_REPLACER, name)
+            parsed_names[props.label] = name
+            file.write(f"{name}\n")
+
+    return parsed_names
+
+
+def parse_names(labeled_names, ndlabels, names_image):
+    # Uses pytesseract to parse province names from the names image, using the labeled regions to isolate each name. Make sure names don't overlap between provinces, or you might need to edit those manually.
+    name_regions = regionprops(labeled_names)
+    parsed_names = {}
+    name_to_labels = defaultdict(list)
+
+    with open("assets/namelist.txt", 'r', encoding='utf-8') as file:
+        province_names = [line.strip() for line in file.readlines()]
+
     for props in name_regions:
         minr, minc, maxr, maxc = props.bbox
         h, w = names_image.shape[:2]
-        r0 = max(0, minr - 5)
-        r1 = min(h, maxr + 5)
-        c0 = max(0, minc - 5)
-        c1 = min(w, maxc + 5)
+        pad = 10
+        r0 = max(0, minr - pad)
+        r1 = min(h, maxr + pad)
+        c0 = max(0, minc - pad)
+        c1 = min(w, maxc + pad)
 
         name_image = names_image[r0:r1, c0:c1]
         #name_image = names_image[minr - 5:maxr + 5, minc - 5:maxc + 5, ...]
-        name = pytesseract.image_to_string(name_image, lang='eng', config=custom_config)
+        name = pytesseract.image_to_string(name_image, lang='eng', config=custom_config) # Set to recognise latin characters, with no language bias. If your names are all in English, you can probably get slightly better performance out of lang='eng' instead. I just used this because mine has fantasy names.
         name = name.strip()
-        name = re.sub(r"\s+", "_", name)
-        parsed_names[props.label] = name.strip()
+        name = re.sub(r"\s+", SPACE_REPLACER, name)
 
+        match, score = process.extractOne(name, province_names, scorer=fuzz.ratio)
+        
+        if score <= 65:
+            print(f"No good match for region {props.label}: '{name}'. Closest would be '{match}' (score: {score})", file=sys.stderr)
+            parsed_names[props.label] = name  # Use raw OCR result if confidence is low
+            name_to_labels[name].append(props.label)
+        else:
+            parsed_names[props.label] = match.strip()
+            name_to_labels[match.strip()].append(props.label)
+
+    for name, labels in name_to_labels.items():
+            if len(labels) > 1:
+                print(f"warning: identical name '{name}' for labels {labels}", file=sys.stderr)
     return parsed_names
 
 def parse_centers(bg_labels, centers_image):
@@ -355,7 +413,7 @@ def generate_map_data(background_image, names_image, centers_image, units_image,
 
     combined_region_information = {
         label: {
-            "name": region_names.get(label, "not named"),
+            "name": region_names.get(label, f"not named {label}"),
             "adjacency": list(region_neighbors[label]),
             "type": region_types[label],
             "is_supply_center": label in region_centers,
@@ -451,22 +509,36 @@ def build_output(combined_region_information):
 
     counts = np.bincount(bg_labels.ravel())
 
+    h, w = bg_labels.shape
+    rr, cc = np.indices((h, w))
+    dist_to_edge = np.minimum.reduce([rr, cc, h - 1 - rr, w - 1 - cc])
+
+    province_pixels = {label: np.where(bg_labels == label) for label in combined_region_information}
+
     for label, info in combined_region_information.items():
+        print (f"Processing region {label}: {info['name']}")
+
         def find_retreat(radius):
-            rr, cc = np.ogrid[:h, :w]
-            exclusion = (rr - y)**2 + (cc - x)**2 <= radius**2
+
+            h_local, w_local = province_mask.shape
+
+            rr_local, cc_local = np.ogrid[:h_local, :w_local]
+
+            exclusion = (rr_local - y_local)**2 + (cc_local - x_local)**2 <= radius**2
 
             retreat_mask = province_mask.copy()
             retreat_mask[exclusion] = False
 
             if np.any(retreat_mask):
                 distance2 = ndimage.distance_transform_edt(retreat_mask)
-                if np.max(distance2) > 0:
-                    return np.unravel_index(np.argmax(distance2), distance2.shape)
 
-            return None
+                if np.max(distance2) > 0:
+                    ry, rx = np.unravel_index(np.argmax(distance2), distance2.shape)
+                    return ry + y0, rx + x0
+
+            return None, None
         
-        province_name = label_to_name[label].replace(" ", SPACE_REPLACER).upper()
+        province_name = info["name"].replace(" ", SPACE_REPLACER).upper()
 
         province_type = determine_type(label, info, combined_region_information)
 
@@ -483,23 +555,34 @@ def build_output(combined_region_information):
             label_to_name
         )
 
+        ys, xs = province_pixels[label]
 
-        province_mask = (bg_labels == label)
-        distance = ndimage.distance_transform_edt(province_mask) # distance to edge of province, used to find good unit placement and retreat points
+        y0, y1 = ys.min(), ys.max() + 1
+        x0, x1 = xs.min(), xs.max() + 1
 
-        h, w = distance.shape
-        rr, cc = np.indices((h, w))
-        dist_to_edge = np.minimum.reduce([rr, cc, h - 1 - rr, w - 1 - cc]) # distance to edge of map, used to avoid placing units too close to the edge where they might be cut off
+        province_mask = (bg_labels[y0:y1, x0:x1] == label)
+        distance = ndimage.distance_transform_edt(province_mask)   # distance to edge of province, used to find good unit placement and retreat points
+        #distance = ndimage.distance_transform_edt(province_mask) 
 
-        effective_distance = np.minimum(distance, dist_to_edge)
-        y, x = np.unravel_index(np.argmax(effective_distance), effective_distance.shape)
+        edge_crop = dist_to_edge[y0:y1, x0:x1]
+
+        effective_distance = np.minimum(distance, edge_crop)
+
+        y_local, x_local = np.unravel_index(np.argmax(effective_distance), effective_distance.shape)
+
+        y = y_local + y0
+        x = x_local + x0
+
         unit_loc = [float(y), float(x)] # For some reason digi-diplo expects [y,x] instead of [x,y]
 
         y2, x2 = find_retreat(20) # 20-pixel buffer between main unit placement and retreat
         if y2 is None or x2 is None:
-            y2, x2 = find_retreat(15) # If province too small, try a smaller buffer. Might cause slight overlap for large unit images, but at that point make larger provinces
+            print(f"Could not find retreat point for {province_name} with 20 pixel buffer", file=sys.stderr)
+            #y2, x2 = find_retreat(15) # If province too small, try a smaller buffer. Might cause slight overlap for large unit images, but at that point make larger provinces
+            y2 = y + 10
+            x2 = x + 10
 
-        if y2 is None or x2 is None:
+        '''if y2 is None or x2 is None:
             # Dilate province slightly to allow outside placement if still too small
             expanded = ndimage.binary_dilation(province_mask, iterations=10)
 
@@ -510,7 +593,7 @@ def build_output(combined_region_information):
             retreat_mask[exclusion] = False
 
             distance2 = ndimage.distance_transform_edt(retreat_mask)
-            y2, x2 = np.unravel_index(np.argmax(distance2), distance2.shape)
+            y2, x2 = np.unravel_index(np.argmax(distance2), distance2.shape)'''
 
         retreat = [float(y2), float(x2)]
         area = int(counts[label])
@@ -687,8 +770,9 @@ def build_map_file_realpolitik(combined_region_information, filename):
 if __name__ == '__main__':
     background_image, names_image, centers_image, units_image, decorations_image, bg_labels, ndlabels = load_images_and_bg_labels("assets/background.png", "assets/names.png", "assets/centers.png", "assets/units.png", "assets/decorations.png")
     
-    if(PLOT_ONLY):
+    if(DEBUG):
         plot_region_info(bg_labels)
+        parse_names_debug(bg_labels * (names_image[:, :, 3] != 0), ndlabels, names_image)
     else:
         if(FIRST_HALF):
             region_information, unit_labels, region_units = generate_map_data(background_image,
@@ -699,9 +783,7 @@ if __name__ == '__main__':
                                                ndlabels)
         if(SECOND_HALF):
             if (not FIRST_HALF):
-                with open("outputs/halfway.json", "r") as f:
-                    combined_region_information = json.load(f)
-                    print(f"Data loaded from outputs/halfway.json")
+                region_information = load_region_information()
                 
             if DIGIDIPLO:
                 build_map_file_digidiplo(region_information, "outputs/graph.yaml")

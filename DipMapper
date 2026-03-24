@@ -19,10 +19,10 @@ from fuzzywuzzy import fuzz, process
 COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colours.
     (205, 214, 213): "ocean",
     (229, 225, 214): "neutral",
-    (158, 157, 156): "island", #neutral island specifically
-    (107, 107, 152): "Northern League",
+    (229, 225, 215): "island", #neutral island specifically
+    (107, 107, 152): "Northern_League",
     (175, 72, 70): "Lorent",
-    (235, 188, 214): "Gnomish Hierarchy",
+    (235, 188, 214): "Gnomish_Hierarchy",
     (224, 188, 130): "Busilar",
     (33, 55, 57): "Anbennar",
     (146, 166, 164): "Grombar",
@@ -31,18 +31,18 @@ COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colour
     (238, 240, 144): "Jaddanzuir",
     (103, 134, 192): "Kalysto",
     (106, 174, 150): "Danggun",
-    (131, 72, 56): "Dragon Command",
+    (131, 72, 56): "Dragon_Command",
     (134, 172, 141): "Khatalashya",
-    (86, 129, 167): "Qasr Baashidi",
+    (86, 129, 167): "Qasr_Baashidi",
     (143, 214, 214): "Melakmengi",
-    (102, 189, 186): "Nur Dhanaenn",
+    (102, 189, 186): "Nur_Dhanaenn",
     (185, 125, 255): "Ameion",
-    (123, 80, 189): "Sarda Empire",
-    (190, 129, 60): "Vanbury Steel Guild",
+    (123, 80, 189): "Sarda_Empire",
+    (190, 129, 60): "Vanbury_Steel_Guild",
     (144, 173, 218): "Triarchy",
-    (122, 118, 173): "Northern League island",
+    (122, 118, 173): "Northern_League island",
     (203, 79, 70): "Lorent island",
-    (255, 195, 227): "Gnomish Hierarchy island",
+    (255, 195, 227): "Gnomish_Hierarchy island",
     (233, 205, 132): "Busilar island",
     (37, 67, 72): "Anbennar island",
     (119, 50, 255): "Grombar island",
@@ -51,14 +51,14 @@ COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colour
     (235, 216, 0): "Jaddanzuir island",
     (137, 30, 30): "Kalysto island",
     (108, 196, 168): "Danggun island",
-    (1, 101, 122): "Dragon Command island",
+    (1, 101, 122): "Dragon_Command island",
     (92, 127, 0): "Khatalashya island",
-    (91, 142, 190): "Qasr Baashidi island",
+    (91, 142, 190): "Qasr_Baashidi island",
     (137, 30, 30): "Melakmengi island",
-    (129, 50, 255): "Nur Dhanaenn island",
+    (129, 50, 255): "Nur_Dhanaenn island",
     (172, 109, 225): "Ameion island",
-    (41, 127, 0): "Sarda Empire island",
-    (245, 216, 0): "Vanbury Steel Guild island",
+    (41, 127, 0): "Sarda_Empire island",
+    (245, 216, 0): "Vanbury_Steel_Guild island",
     (153, 183, 237): "Triarchy island",
     (58, 58, 58): "Impassable",
     (149, 185, 181): "High Seas"
@@ -99,9 +99,9 @@ DIGIDIPLO = True # Set to False to generate a Realpolitik map file instead of Di
 
 custom_config = r'-c tessedit_char_whitelist="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345\'" ""'  # Characters used in province names. Default is letters, spostrophe, and numbers 1-5. Add any extra your variant may have.
 
-SPACE_REPLACER = "" # Since spaces can cause issues in adjacency lists, we remove them. Change this if you want to for example use underscores instead. Note this sometimes causes issues with pytorch at small pixelated font sizes.
+SPACE_REPLACER = "_" # Since spaces can cause issues in adjacency lists, we remove them and use underscores instead.
 
-FIRST_HALF = False # Set to True to save the combined_region_information after processing the first half of the map (useful for large maps that cause memory issues, or if you just want to edit the output manually before generating the final files).
+FIRST_HALF = True # Set to True to save the combined_region_information after processing the first half of the map (useful for large maps that cause memory issues, or if you just want to edit the output manually before generating the final files).
 
 SECOND_HALF = True # Set to True to load the combined_region_information from the first half and continue processing the second half of the map. Make sure to set FIRST_HALF to True and run the script once before using this.
 
@@ -247,6 +247,16 @@ def parse_names_debug(labeled_names, ndlabels, names_image):
 
     return parsed_names
 
+def name_overrides(name):
+    # If your map has certain names that are consistently misread by OCR, and are too far off for the fuzzy-matching to fix, you can add manual overrides here.
+    overrides = {
+        "Than": "Ikan",
+        "Teaye": "Tzaya",
+        "Slegest": "Slegcal"
+        # Add more overrides as needed
+    }
+    return overrides.get(name, None)
+
 
 def parse_names(labeled_names, ndlabels, names_image):
     # Uses pytesseract to parse province names from the names image, using the labeled regions to isolate each name. Make sure names don't overlap between provinces, or you might need to edit those manually.
@@ -272,9 +282,15 @@ def parse_names(labeled_names, ndlabels, names_image):
         name = name.strip()
         name = re.sub(r"\s+", SPACE_REPLACER, name)
 
-        match, score = process.extractOne(name, province_names, scorer=fuzz.ratio)
+        if name == "":
+            print(f"Warning: no name found for region {props.label}. Defaulting to region label.", file=sys.stderr)
+            name = f"Region_{props.label}"
         
-        if score <= 65:
+        match, score = process.extractOne(name, province_names, scorer=fuzz.ratio)
+
+        if(name_overrides(name) != None):
+            name_to_labels[name_overrides(name)].append(props.label)
+        elif score <= 65:
             print(f"No good match for region {props.label}: '{name}'. Closest would be '{match}' (score: {score})", file=sys.stderr)
             parsed_names[props.label] = name  # Use raw OCR result if confidence is low
             name_to_labels[name].append(props.label)
@@ -289,6 +305,30 @@ def parse_names(labeled_names, ndlabels, names_image):
 
 def parse_centers(bg_labels, centers_image):
     return np.setdiff1d(np.unique(bg_labels * (centers_image[:, :, 3] != 0)), [0])
+
+def parse_centers_with_loc(bg_labels, centers_image):
+    mask = centers_image[:, :, 3] != 0
+    ys, xs = np.where(mask)
+    province_ids = bg_labels[ys, xs]
+
+    sc_pixels = defaultdict(list)
+
+    for x, y, pid in zip(xs, ys, province_ids):
+        if pid != 0:
+            sc_pixels[pid].append((x, y))
+
+    sc_locations = {}
+
+    for pid, pixels in sc_pixels.items():
+        xs = [p[0] for p in pixels]
+        ys = [p[1] for p in pixels]
+    
+        cx = int(sum(xs) / len(xs))
+        cy = int(sum(ys) / len(ys))
+    
+        sc_locations[pid] = (cx, cy)
+
+    return sc_locations
 
 def identify_region_types(background_image, bg_labels, ndlabels):
     color_mapping = {}
@@ -413,7 +453,7 @@ def generate_map_data(background_image, names_image, centers_image, units_image,
 
     combined_region_information = {
         label: {
-            "name": region_names.get(label, f"not named {label}"),
+            "name": region_names.get(label, f"not_named_{label}"),
             "adjacency": list(region_neighbors[label]),
             "type": region_types[label],
             "is_supply_center": label in region_centers,
@@ -542,7 +582,7 @@ def build_output(combined_region_information):
 
         province_type = determine_type(label, info, combined_region_information)
 
-        if(province_name == "not named"):
+        if(province_name.startswith("not_named")):
             print(f"Warning: province {label} has no name, check the names image and whether you didn't accidentally put a decorative element in the basemap", file=sys.stderr)
 
         if(len(info["adjacency"]) == 1):
@@ -606,8 +646,10 @@ def build_output(combined_region_information):
                 "label": [[0, 0]],       # placeholder. Not sure what this is used for.
                 "retreat": [retreat],
                 "unit": [unit_loc],
+                **({"sc": [sc_loc]} if info["is_supply_center"] else {})
             },
             "name": province_name,
+            **({"sc": 1} if info["is_supply_center"] else {}),
             "tiles": [label],          
             "type": province_type
         }
@@ -617,22 +659,22 @@ def build_output(combined_region_information):
 def build_player_file(combined_region_information, filename):
     yaml_output = {}
     for colour, power in COLOR_REGION_TYPE_MAPPING.items():
-        if(power.endswith("island") or power == "neutral" or power == "ocean"):
+        if(power.endswith("island") or power == "neutral" or power == "ocean" or power == "High Seas" or power == "Impassable"):
             continue
         territory = [
-            info["name"]
+            info["name"].upper()
             for info in combined_region_information.values()
             if info["type"].startswith(power)
         ]
         centres = [
-            info["name"]
+            info["name"].upper()
             for info in combined_region_information.values()
             if info["type"].startswith(power) and info["is_supply_center"]
         ]
         units = [
-            {"loc": info["name"], "type": info["unit"]} 
+            {"loc": str(info["name"].upper()), "type": str(info["unit"])} 
             for info in combined_region_information.values() 
-            if info["unit"] is not None and info["type"].startswith(power)
+            if info["unit"] != None and info["unit"] != "None" and info["type"].startswith(power)
         ]
         if (len(centres) == 0):
             print(f"Warning: no supply center found for {power}, skipping player creation", file=sys.stderr)

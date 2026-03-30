@@ -16,7 +16,7 @@ import re
 from collections import defaultdict
 from fuzzywuzzy import fuzz, process
 
-COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colours.
+COLOR_REGION_TYPE_MAPPING = { #Modify this with your variant's powers and colours.
     (205, 214, 213): "ocean",
     (229, 225, 214): "neutral",
     (229, 225, 215): "island", #neutral island specifically
@@ -29,7 +29,7 @@ COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colour
     (73, 138, 61): "Cyranvar",
     (108, 45, 43): "Konolkhatep",
     (238, 240, 144): "Jaddanzuir",
-    (103, 134, 192): "Kalysto",
+    (103, 134, 192): "Kalsyto",
     (106, 174, 150): "Danggun",
     (131, 72, 56): "Dragon_Command",
     (134, 172, 141): "Khatalashya",
@@ -49,7 +49,7 @@ COLOR_REGION_TYPE_MAPPING = { #Modify this with your cariant's powers and colour
     (2, 101, 122): "Cyranvar island",
     (11, 127, 0): "Konolkhatep island",
     (235, 216, 0): "Jaddanzuir island",
-    (137, 30, 30): "Kalysto island",
+    (137, 30, 30): "Kalsyto island",
     (108, 196, 168): "Danggun island",
     (1, 101, 122): "Dragon_Command island",
     (92, 127, 0): "Khatalashya island",
@@ -74,7 +74,7 @@ POWER_INITIALS_MAPPING = { # Relevant only for Realpolitik output, can be ignore
     "Cyranvar": 'W',
     "Konolkhatep": 'K',
     "Jaddanzuir": 'J',
-    "Kalysto": 'Y',
+    "Kalsyto": 'Y',
     "Danggun": 'D',
     "Dragon Command": 'C',
     "Khatalashya": 'Z',
@@ -87,13 +87,35 @@ POWER_INITIALS_MAPPING = { # Relevant only for Realpolitik output, can be ignore
     "Triarchy": 'T',
 }
 
+CAPITALS = {
+    "Northern League": 'Gaweton',
+    "Lorent": 'Lorentaine',
+    "Gnomish Hierarchy": 'Oddansbay',
+    "Busilar": 'Hapaine',
+    "Anbennar": 'Anbenncost',
+    "Grombar": 'Garok',
+    "Cyranvar": 'Elynaile',
+    "Konolkhatep": 'Kheterat',
+    "Jaddanzuir": 'Jaddanzar',
+    "Kalsyto": 'Qarshtuluu',
+    "Danggun": 'Jaengujan',
+    "Dragon Command": 'Nozanyanbe',
+    "Khatalashya": 'Zerat',
+    "Qasr Baashidi": 'Maroodiya',
+    "Melakmengi": 'Krekdekei',
+    "Nur Dhanaenn": 'Dalaine',
+    "Ameion": 'Ameoin',
+    "Sarda Empire": 'Arverynn',
+    "Vanbury Steel Guild": 'Ricardsport',
+    "Triarchy": 'Vemod_Arka',
+}
+
 THRESHOLD_SIZE = 300 # Threshold between fleet size and army size in pixels (doesn't have to be exact).
-LARGER_UNIT = "army" #invert these if your fleets are larger than armies
-SMALLER_UNIT = "fleet" #invert these if your fleets are larger than armies
+LARGER_UNIT = "army" #invert this if your fleets are larger than armies
+
+SMALLER_UNIT = "fleet" if LARGER_UNIT == "army" else "army" 
 
 DELETE_TINY_REGIONS = True # Set to True to automatically delete tiny regions (less than 10 pixels) that are likely the result of errors in the image. If your map has legitimate tiny provinces, set this to False and check the generated region plot for any red-marked tiny regions that you might want to edit manually
-
-DEBUG = False # Set to True to only plot the labeled regions and their properties, without generating any output files. Useful for seeing whether your background gets read correctly (especially relevant if you have thin borders and/or decorative elements).
 
 DIGIDIPLO = True # Set to False to generate a Realpolitik map file instead of DigiDiplo. Note that currently, player files are only generated for DigiDiplo.
 
@@ -101,11 +123,15 @@ custom_config = r'-c tessedit_char_whitelist="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
 
 SPACE_REPLACER = "_" # Since spaces can cause issues in adjacency lists, we remove them and use underscores instead.
 
-FIRST_HALF = True # Set to True to save the combined_region_information after processing the first half of the map (useful for large maps that cause memory issues, or if you just want to edit the output manually before generating the final files).
-
-SECOND_HALF = True # Set to True to load the combined_region_information from the first half and continue processing the second half of the map. Make sure to set FIRST_HALF to True and run the script once before using this.
-
 MULTICOLOUR_PROVINCES = False # NOT FULLY IMPLEMENTED:Set to True if your map uses multiple colors per province (e.g. a border color). Might make province recognition less reliable in some parts, especially when it comes to connecting islands.
+
+RUN_MODE = "full" # options are "debug", "full", "first_half", "second_half"
+
+DEBUG = RUN_MODE == "debug"
+
+FIRST_HALF = RUN_MODE == "first_half" or RUN_MODE == "full"
+
+SECOND_HALF = RUN_MODE == "second_half" or RUN_MODE == "full"
 
 def is_ocean(region_type):
     return region_type == "ocean" or region_type == "High Seas"
@@ -264,8 +290,11 @@ def parse_names(labeled_names, ndlabels, names_image):
     parsed_names = {}
     name_to_labels = defaultdict(list)
 
-    with open("assets/namelist.txt", 'r', encoding='utf-8') as file:
-        province_names = [line.strip() for line in file.readlines()]
+    try:
+        with open("assets/namelist.txt", 'r', encoding='utf-8') as file:
+            province_names = [line.strip() for line in file.readlines()]
+    except FileNotFoundError:
+        return parse_names_debug(labeled_names, ndlabels, names_image)
 
     for props in name_regions:
         minr, minc, maxr, maxc = props.bbox
@@ -444,7 +473,7 @@ def generate_map_data(background_image, names_image, centers_image, units_image,
     print("Finding region names")
     region_names = parse_names(name_labels, ndlabels, names_image)
     print("Finding centers")
-    region_centers = parse_centers(bg_labels, centers_image)
+    region_centers = parse_centers_with_loc(bg_labels, centers_image)
     print("Finding region types")
     region_types = identify_region_types(background_image, bg_labels, ndlabels)
     print("Finding units")
@@ -457,7 +486,8 @@ def generate_map_data(background_image, names_image, centers_image, units_image,
             "adjacency": list(region_neighbors[label]),
             "type": region_types[label],
             "is_supply_center": label in region_centers,
-            "unit": region_units[label-1]  # province_units is 0-indexed while labels start at 1
+            "unit": region_units[label-1],  # province_units is 0-indexed while labels start at 1
+            "center_location": region_centers.get(label, None)
         } for label in range(1, ndlabels+1)}
 
     print("Done processing regions")
@@ -595,6 +625,11 @@ def build_output(combined_region_information):
             label_to_name
         )
 
+        if info["center_location"] is not None:
+            sc_loc = [float(info["center_location"][1]), float(info["center_location"][0])]  # Reverse to get (y,x) format
+        else:
+            sc_loc = None
+
         ys, xs = province_pixels[label]
 
         y0, y1 = ys.min(), ys.max() + 1
@@ -680,7 +715,6 @@ def build_player_file(combined_region_information, filename):
             print(f"Warning: no supply center found for {power}, skipping player creation", file=sys.stderr)
             continue
         yaml_output[power] = {
-            "capital": centres[0],   # Arbitrary centre, set manually if your variant uses capital rules
             "color": rgb_to_hex(colour),
             "demonym": power + "ian",   # Too varied to infer consistently, change manually
             "home": centres,   # Assumes cores = starting centres. True for most variants, edit manually if not for yours
@@ -688,6 +722,9 @@ def build_player_file(combined_region_information, filename):
             "territory": territory,
             "units": units
         }
+        capital = CAPITALS.get(power)
+        if capital:
+            yaml_output[power]["capital"] = capital
 
     with open(filename, "w") as f:
         yaml.dump(

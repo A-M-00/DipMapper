@@ -1,0 +1,8826 @@
+{
+    "1": {
+        "name": "Arbaran",
+        "adjacency": [
+            2,
+            325,
+            332,
+            179,
+            54,
+            55,
+            56
+        ],
+        "type": "Anbennar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "2": {
+        "name": "Damescrown",
+        "adjacency": [
+            1,
+            3,
+            4,
+            332,
+            179,
+            341,
+            181
+        ],
+        "type": "Anbennar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4078,
+            609
+        ]
+    },
+    "3": {
+        "name": "Silverkeep",
+        "adjacency": [
+            2,
+            4,
+            6,
+            358,
+            7,
+            362,
+            341,
+            349
+        ],
+        "type": "Anbennar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4139,
+            697
+        ]
+    },
+    "4": {
+        "name": "Konwell",
+        "adjacency": [
+            2,
+            3,
+            6,
+            12,
+            181
+        ],
+        "type": "Anbennar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "5": {
+        "name": "Neckcliffe",
+        "adjacency": [
+            12,
+            121,
+            347,
+            188,
+            125
+        ],
+        "type": "Anbennar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            3955,
+            778
+        ]
+    },
+    "6": {
+        "name": "Moonhaven",
+        "adjacency": [
+            3,
+            4,
+            7,
+            12,
+            188
+        ],
+        "type": "Anbennar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "7": {
+        "name": "Verne",
+        "adjacency": [
+            288,
+            3,
+            6,
+            198,
+            362,
+            188
+        ],
+        "type": "Anbennar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "8": {
+        "name": "Orric_Cheid",
+        "adjacency": [
+            408,
+            210,
+            215
+        ],
+        "type": "Anbennar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3014,
+            1293
+        ]
+    },
+    "9": {
+        "name": "Nurcandar",
+        "adjacency": [
+            152,
+            409,
+            58,
+            228
+        ],
+        "type": "Anbennar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1297,
+            1402
+        ]
+    },
+    "10": {
+        "name": "Devinaire",
+        "adjacency": [
+            240,
+            212,
+            13,
+            222
+        ],
+        "type": "Anbennar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1746,
+            1484
+        ]
+    },
+    "11": {
+        "name": "Ninak",
+        "adjacency": [
+            441,
+            442,
+            252,
+            534
+        ],
+        "type": "Anbennar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4244,
+            1768
+        ]
+    },
+    "12": {
+        "name": "Anbenncost",
+        "adjacency": [
+            4,
+            5,
+            6,
+            181,
+            121,
+            188
+        ],
+        "type": "Anbennar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3987,
+            731
+        ]
+    },
+    "13": {
+        "name": "Isles_of_Plenty",
+        "adjacency": [
+            545,
+            232,
+            10,
+            240,
+            212,
+            511
+        ],
+        "type": "Anbennar island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "14": {
+        "name": "Vrendin",
+        "adjacency": [
+            281,
+            282,
+            278
+        ],
+        "type": "Anbennar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2714,
+            2611
+        ]
+    },
+    "15": {
+        "name": "Kiindtir",
+        "adjacency": [
+            280,
+            284,
+            279
+        ],
+        "type": "Anbennar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3199,
+            2717
+        ]
+    },
+    "16": {
+        "name": "Krakdunvhor",
+        "adjacency": [
+            105,
+            108,
+            109
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "17": {
+        "name": "Serpentspine_proper",
+        "adjacency": [
+            32,
+            321,
+            322,
+            327,
+            363,
+            108,
+            109,
+            333,
+            346,
+            367,
+            113,
+            314,
+            27,
+            31
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "18": {
+        "name": "Northern_Holds",
+        "adjacency": [
+            321,
+            322,
+            109,
+            110,
+            113,
+            148,
+            317
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "19": {
+        "name": "Dalairey_Wastes",
+        "adjacency": [
+            128,
+            324,
+            520,
+            524,
+            176,
+            313,
+            127
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "20": {
+        "name": "not_named_20",
+        "adjacency": [
+            326,
+            522,
+            526,
+            528,
+            53,
+            54
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "21": {
+        "name": "Serpentreach",
+        "adjacency": [
+            32,
+            356,
+            361,
+            367,
+            368,
+            374,
+            375
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "22": {
+        "name": "Jade_Mines",
+        "adjacency": [
+            345,
+            366,
+            377,
+            359
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "23": {
+        "name": "Seghdir",
+        "adjacency": [
+            352,
+            363,
+            535,
+            536,
+            538,
+            539
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "24": {
+        "name": "Dakaz_Carzaviya",
+        "adjacency": [
+            536,
+            377,
+            387,
+            366
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "25": {
+        "name": "East_Salahad",
+        "adjacency": [
+            64,
+            66,
+            419,
+            67,
+            427,
+            542,
+            543
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "26": {
+        "name": "Kaydhano_Sea",
+        "adjacency": [
+            515,
+            273,
+            156,
+            468,
+            155,
+            508,
+            477
+        ],
+        "type": "Impassable",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "27": {
+        "name": "Flower_Grove",
+        "adjacency": [
+            356,
+            333,
+            17,
+            28,
+            30,
+            31
+        ],
+        "type": "Cyranvar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "28": {
+        "name": "Ciranmyna",
+        "adjacency": [
+            333,
+            336,
+            27,
+            29,
+            30
+        ],
+        "type": "Cyranvar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4475,
+            682
+        ]
+    },
+    "29": {
+        "name": "Elynaile",
+        "adjacency": [
+            361,
+            336,
+            338,
+            28,
+            30,
+            351
+        ],
+        "type": "Cyranvar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4424,
+            745
+        ]
+    },
+    "30": {
+        "name": "Drennethille",
+        "adjacency": [
+            356,
+            361,
+            27,
+            28,
+            29
+        ],
+        "type": "Cyranvar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4525,
+            767
+        ]
+    },
+    "31": {
+        "name": "Imyhain",
+        "adjacency": [
+            32,
+            17,
+            27,
+            356
+        ],
+        "type": "Cyranvar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4696,
+            782
+        ]
+    },
+    "32": {
+        "name": "Shadow_Grove",
+        "adjacency": [
+            356,
+            367,
+            17,
+            21,
+            31
+        ],
+        "type": "Cyranvar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "33": {
+        "name": "Ashamadiat",
+        "adjacency": [
+            34,
+            35,
+            268,
+            462,
+            464
+        ],
+        "type": "Qasr_Baashidi",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "34": {
+        "name": "Qasri_Ubakhiyo",
+        "adjacency": [
+            33,
+            35,
+            462,
+            262
+        ],
+        "type": "Qasr_Baashidi",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5430,
+            2200
+        ]
+    },
+    "35": {
+        "name": "Maroodiya",
+        "adjacency": [
+            33,
+            34,
+            36,
+            262,
+            268
+        ],
+        "type": "Qasr_Baashidi",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5426,
+            2330
+        ]
+    },
+    "36": {
+        "name": "Magaalad_Qasr",
+        "adjacency": [
+            35,
+            262,
+            268,
+            271,
+            276,
+            472,
+            479
+        ],
+        "type": "Qasr_Baashidi",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5556,
+            2466
+        ]
+    },
+    "37": {
+        "name": "Fog_Isles",
+        "adjacency": [
+            260,
+            246
+        ],
+        "type": "Qasr_Baashidi island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5861,
+            1877
+        ]
+    },
+    "38": {
+        "name": "Sormaw",
+        "adjacency": [
+            256,
+            40,
+            254,
+            39
+        ],
+        "type": "Nur_Dhanaenn",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2504,
+            1942
+        ]
+    },
+    "39": {
+        "name": "Senaine",
+        "adjacency": [
+            38,
+            40,
+            41,
+            469,
+            471,
+            254
+        ],
+        "type": "Nur_Dhanaenn",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            2571,
+            2069
+        ]
+    },
+    "40": {
+        "name": "Sorfen",
+        "adjacency": [
+            256,
+            38,
+            39,
+            465,
+            469
+        ],
+        "type": "Nur_Dhanaenn",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            2379,
+            2066
+        ]
+    },
+    "41": {
+        "name": "Dalaine",
+        "adjacency": [
+            39,
+            266,
+            470,
+            471,
+            254
+        ],
+        "type": "Nur_Dhanaenn",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2778,
+            2100
+        ]
+    },
+    "42": {
+        "name": "Zuurzoi",
+        "adjacency": [
+            166,
+            43,
+            44,
+            311,
+            345,
+            319
+        ],
+        "type": "Kalysto",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "43": {
+        "name": "Qarshtuluu",
+        "adjacency": [
+            163,
+            166,
+            42,
+            44,
+            45,
+            177
+        ],
+        "type": "Kalysto",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5600,
+            461
+        ]
+    },
+    "44": {
+        "name": "Bulrekayig",
+        "adjacency": [
+            42,
+            43,
+            177,
+            339,
+            345,
+            350
+        ],
+        "type": "Kalysto",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5698,
+            560
+        ]
+    },
+    "45": {
+        "name": "Lankina",
+        "adjacency": [
+            163,
+            43,
+            173,
+            177,
+            339
+        ],
+        "type": "Kalysto",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5345,
+            547
+        ]
+    },
+    "46": {
+        "name": "Nuugem",
+        "adjacency": [
+            323,
+            70,
+            172,
+            47,
+            311,
+            312
+        ],
+        "type": "Danggun",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            6546,
+            523
+        ]
+    },
+    "47": {
+        "name": "Hyeonseong",
+        "adjacency": [
+            323,
+            172,
+            46,
+            48,
+            49,
+            371
+        ],
+        "type": "Danggun",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6624,
+            694
+        ]
+    },
+    "48": {
+        "name": "Heyoolgin",
+        "adjacency": [
+            323,
+            359,
+            47,
+            371,
+            378
+        ],
+        "type": "Danggun",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6231,
+            843
+        ]
+    },
+    "49": {
+        "name": "Jaengujan",
+        "adjacency": [
+            371,
+            172,
+            195,
+            47
+        ],
+        "type": "Danggun",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            6627,
+            791
+        ]
+    },
+    "50": {
+        "name": "Konungrhaven",
+        "adjacency": [
+            160,
+            168,
+            105,
+            169,
+            107,
+            51
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3883,
+            154
+        ]
+    },
+    "51": {
+        "name": "Bayvek",
+        "adjacency": [
+            168,
+            169,
+            50,
+            53,
+            54,
+            55
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4085,
+            326
+        ]
+    },
+    "52": {
+        "name": "Votsend",
+        "adjacency": [
+            164,
+            517
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2257,
+            298
+        ]
+    },
+    "53": {
+        "name": "Westmoors",
+        "adjacency": [
+            168,
+            522,
+            51,
+            20,
+            54
+        ],
+        "type": "Northern_League",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "54": {
+        "name": "Gaweton",
+        "adjacency": [
+            1,
+            326,
+            329,
+            51,
+            20,
+            53,
+            55,
+            56
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4041,
+            431
+        ]
+    },
+    "55": {
+        "name": "Rottenstep",
+        "adjacency": [
+            1,
+            325,
+            169,
+            112,
+            51,
+            54,
+            318
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4231,
+            504
+        ]
+    },
+    "56": {
+        "name": "Vertesk",
+        "adjacency": [
+            329,
+            1,
+            179,
+            54
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4014,
+            543
+        ]
+    },
+    "57": {
+        "name": "Emulyon",
+        "adjacency": [
+            176,
+            178,
+            187,
+            189
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2508,
+            758
+        ]
+    },
+    "58": {
+        "name": "Oztencost",
+        "adjacency": [
+            228,
+            422,
+            9,
+            409,
+            410
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1312,
+            1441
+        ]
+    },
+    "59": {
+        "name": "whittington",
+        "adjacency": [
+            448,
+            450,
+            447,
+            141,
+            255
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4131,
+            1844
+        ]
+    },
+    "60": {
+        "name": "ok",
+        "adjacency": [
+            488,
+            282,
+            147
+        ],
+        "type": "Northern_League",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            2378,
+            2691
+        ]
+    },
+    "61": {
+        "name": "Vogkeysa",
+        "adjacency": [
+            292,
+            389,
+            199,
+            200,
+            396,
+            405,
+            63
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "62": {
+        "name": "Azka_Jexis",
+        "adjacency": [
+            64,
+            65,
+            391,
+            199,
+            206,
+            63
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4478,
+            1166
+        ]
+    },
+    "63": {
+        "name": "Koroshesh",
+        "adjacency": [
+            65,
+            199,
+            405,
+            61,
+            62
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4360,
+            1159
+        ]
+    },
+    "64": {
+        "name": "Shasoura",
+        "adjacency": [
+            65,
+            66,
+            542,
+            391,
+            25,
+            62
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "65": {
+        "name": "Khaterat",
+        "adjacency": [
+            64,
+            418,
+            66,
+            405,
+            62,
+            63
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4426,
+            1322
+        ]
+    },
+    "66": {
+        "name": "Upper_Sorrow",
+        "adjacency": [
+            64,
+            65,
+            418,
+            67,
+            68,
+            69,
+            429,
+            436,
+            25
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "67": {
+        "name": "Argazeen",
+        "adjacency": [
+            66,
+            427,
+            434,
+            436,
+            25
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4875,
+            1626
+        ]
+    },
+    "68": {
+        "name": "Kwatubis",
+        "adjacency": [
+            449,
+            66,
+            69,
+            436,
+            444,
+            445
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4605,
+            1755
+        ]
+    },
+    "69": {
+        "name": "Khawit",
+        "adjacency": [
+            66,
+            68,
+            140,
+            429,
+            444
+        ],
+        "type": "Konolkhatep",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "70": {
+        "name": "Nokseseom",
+        "adjacency": [
+            162,
+            172,
+            46,
+            310,
+            312
+        ],
+        "type": "Danggun island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "71": {
+        "name": "Tunin",
+        "adjacency": [
+            205,
+            130,
+            204,
+            373
+        ],
+        "type": "Northern_League island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2043,
+            1051
+        ]
+    },
+    "72": {
+        "name": "Panhenaw",
+        "adjacency": [
+            512,
+            546,
+            514,
+            236,
+            117,
+            246
+        ],
+        "type": "Northern_League island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            6038,
+            1877
+        ]
+    },
+    "73": {
+        "name": "Elsinecestir",
+        "adjacency": [
+            265,
+            274,
+            277,
+            270
+        ],
+        "type": "Northern_League island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5986,
+            2291
+        ]
+    },
+    "74": {
+        "name": "Arverynn",
+        "adjacency": [
+            324,
+            330,
+            75,
+            76,
+            315
+        ],
+        "type": "Sarda_Empire",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1661,
+            757
+        ]
+    },
+    "75": {
+        "name": "Lower_Ynn",
+        "adjacency": [
+            324,
+            74,
+            76,
+            77,
+            370,
+            127
+        ],
+        "type": "Sarda_Empire",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "76": {
+        "name": "Yrngard",
+        "adjacency": [
+            354,
+            330,
+            75,
+            74,
+            77,
+            376
+        ],
+        "type": "Sarda_Empire",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1570,
+            874
+        ]
+    },
+    "77": {
+        "name": "Vels_Domfan",
+        "adjacency": [
+            75,
+            76,
+            78,
+            370,
+            376
+        ],
+        "type": "Sarda_Empire",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1698,
+            903
+        ]
+    },
+    "78": {
+        "name": "Ynnsmouth",
+        "adjacency": [
+            203,
+            77,
+            370,
+            376,
+            379,
+            382
+        ],
+        "type": "Sarda_Empire",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1748,
+            960
+        ]
+    },
+    "79": {
+        "name": "Sir",
+        "adjacency": [
+            390,
+            81,
+            82,
+            377,
+            378
+        ],
+        "type": "Dragon_Command",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6005,
+            1088
+        ]
+    },
+    "80": {
+        "name": "Yanzhong",
+        "adjacency": [
+            384,
+            393,
+            397,
+            399,
+            81,
+            82,
+            383
+        ],
+        "type": "Dragon_Command",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6256,
+            1123
+        ]
+    },
+    "81": {
+        "name": "Nozanyanbe",
+        "adjacency": [
+            384,
+            79,
+            80,
+            82,
+            378
+        ],
+        "type": "Dragon_Command",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6102,
+            1139
+        ]
+    },
+    "82": {
+        "name": "Bianyuan",
+        "adjacency": [
+            390,
+            399,
+            80,
+            81,
+            79,
+            402,
+            404
+        ],
+        "type": "Dragon_Command",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6123,
+            1212
+        ]
+    },
+    "83": {
+        "name": "Zerat",
+        "adjacency": [
+            459,
+            433,
+            434,
+            84,
+            86,
+            439,
+            88
+        ],
+        "type": "Khatalashya",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4965,
+            1821
+        ]
+    },
+    "84": {
+        "name": "Akhanekas",
+        "adjacency": [
+            456,
+            461,
+            433,
+            83,
+            85,
+            88
+        ],
+        "type": "Khatalashya",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5082,
+            1800
+        ]
+    },
+    "85": {
+        "name": "Kagdilgir",
+        "adjacency": [
+            456,
+            458,
+            433,
+            84,
+            92
+        ],
+        "type": "Khatalashya",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "86": {
+        "name": "Amiri",
+        "adjacency": [
+            439,
+            261,
+            459,
+            83,
+            87,
+            445
+        ],
+        "type": "Khatalashya",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4733,
+            1934
+        ]
+    },
+    "87": {
+        "name": "Zena",
+        "adjacency": [
+            449,
+            257,
+            261,
+            86,
+            445
+        ],
+        "type": "Khatalashya",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "88": {
+        "name": "Rayazas",
+        "adjacency": [
+            83,
+            84,
+            461,
+            459
+        ],
+        "type": "Khatalashya",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4932,
+            1905
+        ]
+    },
+    "89": {
+        "name": "Naleni",
+        "adjacency": [
+            233,
+            236,
+            246,
+            90,
+            91,
+            157
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5721,
+            1557
+        ]
+    },
+    "90": {
+        "name": "Simahrika",
+        "adjacency": [
+            233,
+            428,
+            430,
+            89,
+            91,
+            93
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "91": {
+        "name": "Yetmesira",
+        "adjacency": [
+            246,
+            89,
+            90,
+            93,
+            94
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5661,
+            1670
+        ]
+    },
+    "92": {
+        "name": "kvathagis",
+        "adjacency": [
+            96,
+            458,
+            430,
+            433,
+            85,
+            93,
+            95
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5329,
+            1759
+        ]
+    },
+    "93": {
+        "name": "Fedoni",
+        "adjacency": [
+            430,
+            90,
+            91,
+            92,
+            94,
+            95
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "94": {
+        "name": "Zedahrika",
+        "adjacency": [
+            453,
+            455,
+            246,
+            91,
+            93,
+            95
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "95": {
+        "name": "Krekdekei",
+        "adjacency": [
+            96,
+            455,
+            92,
+            93,
+            94
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5544,
+            1767
+        ]
+    },
+    "96": {
+        "name": "Sky_Soaring_Eagle",
+        "adjacency": [
+            455,
+            458,
+            462,
+            92,
+            95
+        ],
+        "type": "Melakmengi",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "97": {
+        "name": "Beik",
+        "adjacency": [
+            392,
+            202,
+            383
+        ],
+        "type": "Triarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6423,
+            1066
+        ]
+    },
+    "98": {
+        "name": "Vemod_Arka",
+        "adjacency": [
+            385,
+            99,
+            100,
+            101,
+            103,
+            401,
+            209,
+            151
+        ],
+        "type": "Triarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            920,
+            1460
+        ]
+    },
+    "99": {
+        "name": "Zurzumexia",
+        "adjacency": [
+            98,
+            103,
+            104,
+            234,
+            401,
+            116,
+            414
+        ],
+        "type": "Triarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1092,
+            1552
+        ]
+    },
+    "100": {
+        "name": "Bokguan",
+        "adjacency": [
+            209,
+            98,
+            101
+        ],
+        "type": "Triarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "101": {
+        "name": "Gommoport",
+        "adjacency": [
+            98,
+            100,
+            103,
+            209,
+            220
+        ],
+        "type": "Triarchy",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            742,
+            1501
+        ]
+    },
+    "102": {
+        "name": "Region_102",
+        "adjacency": [
+            417,
+            420,
+            229
+        ],
+        "type": "Triarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5970,
+            1420
+        ]
+    },
+    "103": {
+        "name": "Mestikardu",
+        "adjacency": [
+            98,
+            99,
+            101,
+            104,
+            244,
+            247,
+            220
+        ],
+        "type": "Triarchy",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            914,
+            1614
+        ]
+    },
+    "104": {
+        "name": "Mallazabo",
+        "adjacency": [
+            234,
+            99,
+            244,
+            103
+        ],
+        "type": "Triarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "105": {
+        "name": "Troll_Forests",
+        "adjacency": [
+            106,
+            107,
+            108,
+            109,
+            16,
+            50
+        ],
+        "type": "Grombar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "106": {
+        "name": "Yyl_Moitsa",
+        "adjacency": [
+            161,
+            163,
+            105,
+            108,
+            173
+        ],
+        "type": "Grombar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5470,
+            54
+        ]
+    },
+    "107": {
+        "name": "Olavlund",
+        "adjacency": [
+            105,
+            169,
+            109,
+            110,
+            111,
+            50
+        ],
+        "type": "Grombar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "108": {
+        "name": "Puakod",
+        "adjacency": [
+            105,
+            106,
+            109,
+            173,
+            16,
+            17,
+            314,
+            316
+        ],
+        "type": "Grombar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5142,
+            433
+        ]
+    },
+    "109": {
+        "name": "Kabarda",
+        "adjacency": [
+            105,
+            107,
+            108,
+            110,
+            16,
+            17,
+            18,
+            113
+        ],
+        "type": "Grombar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4669,
+            397
+        ]
+    },
+    "110": {
+        "name": "Athfork",
+        "adjacency": [
+            107,
+            109,
+            111,
+            112,
+            18,
+            317,
+            318
+        ],
+        "type": "Grombar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4363,
+            461
+        ]
+    },
+    "111": {
+        "name": "Garok",
+        "adjacency": [
+            112,
+            169,
+            107,
+            110
+        ],
+        "type": "Grombar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4242,
+            366
+        ]
+    },
+    "112": {
+        "name": "Middle_Alen",
+        "adjacency": [
+            169,
+            110,
+            111,
+            55,
+            318
+        ],
+        "type": "Grombar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "113": {
+        "name": "Assenbly_Terrace",
+        "adjacency": [
+            321,
+            17,
+            18,
+            109
+        ],
+        "type": "Grombar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "114": {
+        "name": "OCEAN_OF_THE_LOST",
+        "adjacency": [
+            196,
+            165,
+            492,
+            175,
+            499,
+            211,
+            503,
+            184,
+            185,
+            186,
+            247,
+            220,
+            285,
+            159
+        ],
+        "type": "High Seas",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "115": {
+        "name": "OCEAN_OF_THE_LOST",
+        "adjacency": [
+            224,
+            280,
+            162,
+            226,
+            227,
+            197,
+            172,
+            494,
+            270,
+            242,
+            243,
+            277,
+            248,
+            479
+        ],
+        "type": "High Seas",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "116": {
+        "name": "Gadodcodd",
+        "adjacency": [
+            99,
+            228,
+            296,
+            234,
+            152,
+            414
+        ],
+        "type": "Triarchy island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "117": {
+        "name": "Ginhyut",
+        "adjacency": [
+            512,
+            248,
+            514,
+            72
+        ],
+        "type": "Triarchy island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            6147,
+            1917
+        ]
+    },
+    "118": {
+        "name": "Paraidar",
+        "adjacency": [
+            282,
+            283,
+            286,
+            287
+        ],
+        "type": "Ameion island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2361,
+            2781
+        ]
+    },
+    "119": {
+        "name": "Deranne",
+        "adjacency": [
+            530,
+            180,
+            340,
+            343,
+            120,
+            183,
+            122,
+            123,
+            124
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3716,
+            692
+        ]
+    },
+    "120": {
+        "name": "Redglades",
+        "adjacency": [
+            337,
+            119,
+            121,
+            122,
+            347,
+            343
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "121": {
+        "name": "Exwes",
+        "adjacency": [
+            5,
+            12,
+            337,
+            181,
+            342,
+            120,
+            347
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "122": {
+        "name": "Lorentaine",
+        "adjacency": [
+            188,
+            119,
+            120,
+            347,
+            124,
+            125,
+            126
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            3831,
+            721
+        ]
+    },
+    "123": {
+        "name": "Daromsfort",
+        "adjacency": [
+            190,
+            119,
+            183,
+            124,
+            126
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3712,
+            758
+        ]
+    },
+    "124": {
+        "name": "ording",
+        "adjacency": [
+            122,
+            123,
+            126,
+            119
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "125": {
+        "name": "Roilsard",
+        "adjacency": [
+            122,
+            347,
+            188,
+            5
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "126": {
+        "name": "Sornaire",
+        "adjacency": [
+            194,
+            124,
+            122,
+            123,
+            188,
+            190
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3769,
+            858
+        ]
+    },
+    "127": {
+        "name": "Bloodgroves",
+        "adjacency": [
+            128,
+            129,
+            130,
+            324,
+            75,
+            370,
+            19,
+            373
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "128": {
+        "name": "Kwinehcost",
+        "adjacency": [
+            193,
+            129,
+            176,
+            19,
+            127
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            2211,
+            870
+        ]
+    },
+    "129": {
+        "name": "Abhenn",
+        "adjacency": [
+            128,
+            193,
+            130,
+            205,
+            127
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2201,
+            971
+        ]
+    },
+    "130": {
+        "name": "Red_Coast",
+        "adjacency": [
+            129,
+            71,
+            205,
+            373,
+            127
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "131": {
+        "name": "North_Endralliande",
+        "adjacency": [
+            193,
+            132,
+            133,
+            187,
+            189
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "132": {
+        "name": "Jercel",
+        "adjacency": [
+            193,
+            131,
+            133,
+            205,
+            216,
+            217
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "133": {
+        "name": "Criodheel",
+        "adjacency": [
+            131,
+            132,
+            215,
+            217,
+            187
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2771,
+            1209
+        ]
+    },
+    "134": {
+        "name": "Shofashok",
+        "adjacency": [
+            394,
+            395,
+            403,
+            212,
+            382
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1691,
+            1212
+        ]
+    },
+    "135": {
+        "name": "Taiver",
+        "adjacency": [
+            417,
+            390,
+            136,
+            137,
+            398,
+            404
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "136": {
+        "name": "Bieng_Phang",
+        "adjacency": [
+            135,
+            137,
+            398,
+            411,
+            540,
+            223
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5825,
+            1348
+        ]
+    },
+    "137": {
+        "name": "Skarkaophe",
+        "adjacency": [
+            417,
+            230,
+            135,
+            136,
+            223
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5875,
+            1435
+        ]
+    },
+    "138": {
+        "name": "Eadohas",
+        "adjacency": [
+            216,
+            217,
+            139,
+            241
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "139": {
+        "name": "Ochchuscost",
+        "adjacency": [
+            231,
+            138,
+            241,
+            215,
+            217
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2564,
+            1732
+        ]
+    },
+    "140": {
+        "name": "Kunolo",
+        "adjacency": [
+            69,
+            429,
+            438,
+            249,
+            444
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4480,
+            1688
+        ]
+    },
+    "141": {
+        "name": "Crovanspier",
+        "adjacency": [
+            255,
+            59,
+            303,
+            447
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4086,
+            1856
+        ]
+    },
+    "142": {
+        "name": "Vumbkauva",
+        "adjacency": [
+            265,
+            274,
+            467,
+            143
+        ],
+        "type": "Lorent",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5930,
+            2243
+        ]
+    },
+    "143": {
+        "name": "Tagto",
+        "adjacency": [
+            274,
+            467,
+            308,
+            142
+        ],
+        "type": "Lorent",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "144": {
+        "name": "Ipparoga",
+        "adjacency": [
+            480,
+            146,
+            283,
+            487
+        ],
+        "type": "Ameion",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            2065,
+            2599
+        ]
+    },
+    "145": {
+        "name": "Sotereion",
+        "adjacency": [
+            487,
+            488,
+            147,
+            283,
+            478
+        ],
+        "type": "Ameion",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            2310,
+            2632
+        ]
+    },
+    "146": {
+        "name": "Ameion",
+        "adjacency": [
+            480,
+            483,
+            490,
+            493,
+            144,
+            283,
+            286
+        ],
+        "type": "Ameion",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1923,
+            2695
+        ]
+    },
+    "147": {
+        "name": "Akr",
+        "adjacency": [
+            488,
+            145,
+            282,
+            283,
+            60
+        ],
+        "type": "Ameion",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "148": {
+        "name": "Steelhyl",
+        "adjacency": [
+            18,
+            322,
+            317
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4493,
+            510
+        ]
+    },
+    "149": {
+        "name": "Baycoast",
+        "adjacency": [
+            184,
+            355,
+            365
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            705,
+            929
+        ]
+    },
+    "150": {
+        "name": "Soldarcam",
+        "adjacency": [
+            385,
+            209,
+            372,
+            151,
+            184
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            803,
+            1044
+        ]
+    },
+    "151": {
+        "name": "Wormway",
+        "adjacency": [
+            385,
+            98,
+            209,
+            150
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "152": {
+        "name": "Quintuplets",
+        "adjacency": [
+            228,
+            9,
+            116,
+            409,
+            414
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1271,
+            1395
+        ]
+    },
+    "153": {
+        "name": "Tristanton",
+        "adjacency": [
+            154,
+            250,
+            239
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1531,
+            1749
+        ]
+    },
+    "154": {
+        "name": "Ricardsport",
+        "adjacency": [
+            238,
+            239,
+            247,
+            153,
+            250,
+            251
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1487,
+            1780
+        ]
+    },
+    "155": {
+        "name": "Pithion",
+        "adjacency": [
+            477,
+            483,
+            489,
+            490,
+            26,
+            156,
+            509
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1712,
+            2600
+        ]
+    },
+    "156": {
+        "name": "Enpkeios",
+        "adjacency": [
+            26,
+            155,
+            508,
+            509
+        ],
+        "type": "Vanbury_Steel_Guild",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1648,
+            2593
+        ]
+    },
+    "157": {
+        "name": "Tiphiya",
+        "adjacency": [
+            544,
+            233,
+            236,
+            407,
+            89,
+            219,
+            223
+        ],
+        "type": "Lorent island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "158": {
+        "name": "Wanderer's_Isles",
+        "adjacency": [
+            225,
+            221,
+            237,
+            245
+        ],
+        "type": "Lorent island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3641,
+            1698
+        ]
+    },
+    "159": {
+        "name": "Broken_Sea",
+        "adjacency": [
+            160,
+            516,
+            164,
+            165,
+            518,
+            523,
+            495,
+            114,
+            309
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "160": {
+        "name": "Northern_Ocean",
+        "adjacency": [
+            167,
+            168,
+            170,
+            495,
+            496,
+            50,
+            159
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "161": {
+        "name": "Alkhogaadyn_Expanse",
+        "adjacency": [
+            162,
+            163,
+            166,
+            106,
+            494
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "162": {
+        "name": "Widow's_Sea",
+        "adjacency": [
+            161,
+            166,
+            70,
+            172,
+            494,
+            115,
+            310
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "163": {
+        "name": "Blue_Sea",
+        "adjacency": [
+            161,
+            166,
+            106,
+            43,
+            173,
+            45
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "164": {
+        "name": "Fjordwash",
+        "adjacency": [
+            516,
+            517,
+            167,
+            171,
+            495,
+            52,
+            159
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "165": {
+        "name": "Eigras",
+        "adjacency": [
+            518,
+            519,
+            175,
+            527,
+            529,
+            114,
+            532,
+            159
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "166": {
+        "name": "Hokhos_Sea",
+        "adjacency": [
+            161,
+            162,
+            163,
+            42,
+            43,
+            310,
+            311
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "167": {
+        "name": "Northern_Thaw",
+        "adjacency": [
+            160,
+            164,
+            171,
+            174,
+            495,
+            496
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "168": {
+        "name": "Reaver's_Sea",
+        "adjacency": [
+            160,
+            170,
+            522,
+            525,
+            50,
+            51,
+            53
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "169": {
+        "name": "Giant's_Grave_Sea",
+        "adjacency": [
+            107,
+            111,
+            112,
+            50,
+            51,
+            55
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "170": {
+        "name": "Nimscodd_Sea",
+        "adjacency": [
+            160,
+            168,
+            525,
+            174,
+            496,
+            528,
+            530,
+            180
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "171": {
+        "name": "Iceberg_Alley",
+        "adjacency": [
+            164,
+            517,
+            167,
+            521,
+            524,
+            174,
+            176,
+            497,
+            178
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "172": {
+        "name": "Odheongu_Sea",
+        "adjacency": [
+            162,
+            195,
+            197,
+            70,
+            202,
+            46,
+            47,
+            49,
+            115
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "173": {
+        "name": "Kukatodic_Bight",
+        "adjacency": [
+            163,
+            328,
+            106,
+            108,
+            45,
+            339,
+            316
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "174": {
+        "name": "Lonely_Far_Lane",
+        "adjacency": [
+            167,
+            170,
+            171,
+            496,
+            497,
+            178,
+            498,
+            180,
+            182,
+            183
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "175": {
+        "name": "Fogharabh",
+        "adjacency": [
+            320,
+            165,
+            519,
+            334,
+            114,
+            499,
+            184
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "176": {
+        "name": "Coast_of_Betrayal",
+        "adjacency": [
+            128,
+            193,
+            171,
+            524,
+            178,
+            19,
+            57,
+            189
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "177": {
+        "name": "Triunic_Lakes",
+        "adjacency": [
+            339,
+            43,
+            44,
+            45
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "178": {
+        "name": "Coldswells",
+        "adjacency": [
+            171,
+            174,
+            176,
+            497,
+            182,
+            57,
+            187
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "179": {
+        "name": "Bay_of_vertesk",
+        "adjacency": [
+            1,
+            2,
+            329,
+            181,
+            56
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "180": {
+        "name": "Portnamm_Bay",
+        "adjacency": [
+            170,
+            174,
+            530,
+            340,
+            119,
+            183
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "181": {
+        "name": "Dameshead",
+        "adjacency": [
+            2,
+            4,
+            329,
+            12,
+            179,
+            342,
+            121
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "182": {
+        "name": "Expanse_Sea",
+        "adjacency": [
+            192,
+            174,
+            178,
+            498,
+            501,
+            183,
+            187,
+            190
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "183": {
+        "name": "Westcoast",
+        "adjacency": [
+            174,
+            498,
+            180,
+            182,
+            119,
+            123,
+            190
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "184": {
+        "name": "Sarmadfar",
+        "adjacency": [
+            355,
+            364,
+            365,
+            334,
+            175,
+            209,
+            114,
+            499,
+            372,
+            149,
+            150,
+            503
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "185": {
+        "name": "out",
+        "adjacency": [
+            114
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "fleet",
+        "center_location": null
+    },
+    "186": {
+        "name": "OOL2",
+        "adjacency": [
+            114
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "187": {
+        "name": "Remnant_Sea",
+        "adjacency": [
+            131,
+            133,
+            208,
+            178,
+            210,
+            501,
+            182,
+            215,
+            57,
+            189
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "188": {
+        "name": "Bay_of_Wines",
+        "adjacency": [
+            194,
+            5,
+            6,
+            7,
+            198,
+            12,
+            122,
+            125,
+            126
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "189": {
+        "name": "Far_Expanse",
+        "adjacency": [
+            193,
+            131,
+            176,
+            500,
+            57,
+            187
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "190": {
+        "name": "Coast_of_Venail",
+        "adjacency": [
+            192,
+            194,
+            369,
+            182,
+            183,
+            123,
+            126
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "191": {
+        "name": "Gemisle_Sea",
+        "adjacency": [
+            288,
+            289,
+            290,
+            358,
+            200,
+            368
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "192": {
+        "name": "Edillion's_Relief",
+        "adjacency": [
+            194,
+            291,
+            207,
+            208,
+            369,
+            501,
+            182,
+            190
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "193": {
+        "name": "Silsensald_Sea",
+        "adjacency": [
+            128,
+            129,
+            131,
+            132,
+            205,
+            176,
+            500,
+            189
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "194": {
+        "name": "Divengate",
+        "adjacency": [
+            192,
+            291,
+            198,
+            126,
+            188,
+            190
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "195": {
+        "name": "Sea_of_Spears",
+        "adjacency": [
+            386,
+            202,
+            172,
+            49,
+            371,
+            383
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "196": {
+        "name": "OOL1",
+        "adjacency": [
+            114
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "197": {
+        "name": "The_Bridge",
+        "adjacency": [
+            224,
+            202,
+            172,
+            115,
+            214
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "198": {
+        "name": "Dog_Coast",
+        "adjacency": [
+            288,
+            194,
+            290,
+            291,
+            389,
+            292,
+            7,
+            200,
+            188
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "199": {
+        "name": "Sea_of_Echoes",
+        "adjacency": [
+            200,
+            201,
+            206,
+            368,
+            375,
+            380,
+            61,
+            62,
+            63
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "200": {
+        "name": "Tefkora_Pass",
+        "adjacency": [
+            290,
+            292,
+            198,
+            199,
+            368,
+            61,
+            191
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "201": {
+        "name": "Gulf_of_Glass",
+        "adjacency": [
+            391,
+            199,
+            206,
+            375,
+            537
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "202": {
+        "name": "Tianlou_Bay",
+        "adjacency": [
+            97,
+            386,
+            195,
+            197,
+            392,
+            172,
+            400,
+            214,
+            383
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "203": {
+        "name": "Trollsbay",
+        "adjacency": [
+            395,
+            78,
+            502,
+            379,
+            382
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "204": {
+        "name": "Bloodgroves_coast",
+        "adjacency": [
+            71,
+            205,
+            373,
+            502,
+            381
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "205": {
+        "name": "Graxilzin_Sea",
+        "adjacency": [
+            129,
+            130,
+            193,
+            132,
+            71,
+            204,
+            212,
+            502,
+            216,
+            510
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "206": {
+        "name": "Sea_of_Elizna",
+        "adjacency": [
+            391,
+            201,
+            62,
+            199
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "207": {
+        "name": "Ekhani_Tip",
+        "adjacency": [
+            192,
+            291,
+            396,
+            208,
+            213
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "208": {
+        "name": "Devil's_Trident_Sea",
+        "adjacency": [
+            192,
+            207,
+            210,
+            501,
+            213,
+            504,
+            187,
+            221
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "209": {
+        "name": "Gulf_of_Neanaani",
+        "adjacency": [
+            98,
+            100,
+            101,
+            150,
+            503,
+            184,
+            151,
+            220
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "210": {
+        "name": "Banished_Sea",
+        "adjacency": [
+            8,
+            208,
+            215,
+            408,
+            187,
+            221
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "211": {
+        "name": "oud",
+        "adjacency": [
+            114
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "212": {
+        "name": "Charmed_Sea",
+        "adjacency": [
+            134,
+            10,
+            395,
+            205,
+            13,
+            403,
+            502,
+            222,
+            510,
+            511
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "213": {
+        "name": "Corsair_Reaches",
+        "adjacency": [
+            225,
+            396,
+            207,
+            208,
+            504,
+            505,
+            218
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "214": {
+        "name": "Phokao_Pass",
+        "adjacency": [
+            224,
+            197,
+            293,
+            294,
+            202,
+            397,
+            400,
+            533
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "215": {
+        "name": "Calamity_Pass",
+        "adjacency": [
+            133,
+            231,
+            8,
+            139,
+            210,
+            408,
+            217,
+            187,
+            221
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "216": {
+        "name": "Wanderer's_Sea",
+        "adjacency": [
+            132,
+            232,
+            138,
+            205,
+            241,
+            406,
+            217,
+            510
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "217": {
+        "name": "Gate_Sea",
+        "adjacency": [
+            132,
+            133,
+            138,
+            139,
+            406,
+            215,
+            216
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "218": {
+        "name": "Sandspite_Gulf",
+        "adjacency": [
+            225,
+            298,
+            396,
+            213,
+            405,
+            505,
+            415
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "219": {
+        "name": "Jadd_Sea",
+        "adjacency": [
+            544,
+            423,
+            233,
+            428,
+            157,
+            541,
+            543
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "220": {
+        "name": "Sea_of_Silence",
+        "adjacency": [
+            101,
+            103,
+            209,
+            114,
+            503,
+            247
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "221": {
+        "name": "Fadhobaith",
+        "adjacency": [
+            225,
+            231,
+            504,
+            237,
+            208,
+            210,
+            215,
+            408,
+            158
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "222": {
+        "name": "Reaper's_Coast",
+        "adjacency": [
+            10,
+            239,
+            240,
+            403,
+            212,
+            413
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "223": {
+        "name": "Gulf_of_Rahen",
+        "adjacency": [
+            230,
+            136,
+            137,
+            236,
+            407,
+            411,
+            157
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "224": {
+        "name": "Binhrung_Coast",
+        "adjacency": [
+            512,
+            197,
+            294,
+            295,
+            115,
+            214,
+            248
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "225": {
+        "name": "Pointsight",
+        "adjacency": [
+            298,
+            213,
+            245,
+            504,
+            505,
+            218,
+            221,
+            158
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "226": {
+        "name": "out",
+        "adjacency": [
+            115
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "fleet",
+        "center_location": null
+    },
+    "227": {
+        "name": "OOL2",
+        "adjacency": [
+            115
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "228": {
+        "name": "Gulf_of_Haraf",
+        "adjacency": [
+            422,
+            296,
+            9,
+            424,
+            299,
+            238,
+            239,
+            116,
+            152,
+            58
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "229": {
+        "name": "Pra_Bay",
+        "adjacency": [
+            417,
+            420,
+            102,
+            230,
+            426,
+            235
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "230": {
+        "name": "GuLf_of_Gon",
+        "adjacency": [
+            417,
+            229,
+            137,
+            235,
+            236,
+            223
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "231": {
+        "name": "Ochhus_Sea",
+        "adjacency": [
+            139,
+            237,
+            241,
+            215,
+            221,
+            254
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "232": {
+        "name": "craterdeep",
+        "adjacency": [
+            545,
+            13,
+            241,
+            437,
+            216,
+            510,
+            511
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "233": {
+        "name": "Horn_of_Sarhal",
+        "adjacency": [
+            428,
+            89,
+            90,
+            219,
+            157
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "234": {
+        "name": "Artificer_Coast",
+        "adjacency": [
+            99,
+            296,
+            104,
+            238,
+            116,
+            244
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "235": {
+        "name": "Khom_Sea",
+        "adjacency": [
+            229,
+            230,
+            297,
+            426,
+            236,
+            431
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "236": {
+        "name": "Whitewater_Sea",
+        "adjacency": [
+            512,
+            230,
+            72,
+            235,
+            431,
+            246,
+            89,
+            157,
+            223
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "237": {
+        "name": "Sea_of_Wreckages",
+        "adjacency": [
+            258,
+            231,
+            269,
+            305,
+            306,
+            245,
+            254,
+            506,
+            221,
+            158
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "238": {
+        "name": "Shattered_Islands",
+        "adjacency": [
+            513,
+            228,
+            296,
+            234,
+            299,
+            239,
+            244,
+            154,
+            251
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "239": {
+        "name": "Lovers'_pass",
+        "adjacency": [
+            228,
+            424,
+            250,
+            299,
+            238,
+            240,
+            153,
+            154,
+            413,
+            222
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "240": {
+        "name": "Bay_of_respite",
+        "adjacency": [
+            545,
+            446,
+            10,
+            13,
+            239,
+            437,
+            250,
+            222
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "241": {
+        "name": "Silverten_Pass",
+        "adjacency": [
+            256,
+            452,
+            231,
+            232,
+            138,
+            139,
+            437,
+            216,
+            443,
+            254
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "242": {
+        "name": "oud",
+        "adjacency": [
+            115
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "243": {
+        "name": "OOL1",
+        "adjacency": [
+            115
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "244": {
+        "name": "Torn_Sea",
+        "adjacency": [
+            513,
+            103,
+            104,
+            234,
+            238,
+            247,
+            251
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "245": {
+        "name": "Marid's_Sea",
+        "adjacency": [
+            225,
+            258,
+            298,
+            301,
+            302,
+            237,
+            303,
+            158,
+            255
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "246": {
+        "name": "Lanun_Depths",
+        "adjacency": [
+            546,
+            260,
+            37,
+            453,
+            72,
+            457,
+            236,
+            89,
+            91,
+            94
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "247": {
+        "name": "Thenon_Current",
+        "adjacency": [
+            482,
+            103,
+            267,
+            492,
+            114,
+            244,
+            154,
+            251,
+            220
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "248": {
+        "name": "East_Ringlet_Sea",
+        "adjacency": [
+            224,
+            512,
+            514,
+            270,
+            115,
+            117
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "249": {
+        "name": "Kunolo_Bay",
+        "adjacency": [
+            449,
+            257,
+            454,
+            140,
+            304,
+            438,
+            444,
+            253
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "250": {
+        "name": "Amadian_Pass",
+        "adjacency": [
+            451,
+            460,
+            239,
+            240,
+            153,
+            154,
+            251,
+            446
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "251": {
+        "name": "Matni_Sea",
+        "adjacency": [
+            513,
+            250,
+            267,
+            460,
+            238,
+            244,
+            247,
+            154
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "252": {
+        "name": "Latran",
+        "adjacency": [
+            450,
+            259,
+            11,
+            534,
+            442,
+            253,
+            255
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "253": {
+        "name": "Tibokyuye_Point",
+        "adjacency": [
+            259,
+            304,
+            438,
+            249,
+            442,
+            252
+        ],
+        "type": "ocean",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4409,
+            1805
+        ]
+    },
+    "254": {
+        "name": "Vine_Current",
+        "adjacency": [
+            256,
+            38,
+            231,
+            39,
+            41,
+            266,
+            237,
+            241,
+            506
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "255": {
+        "name": "Dao_Nako_Coast",
+        "adjacency": [
+            450,
+            259,
+            258,
+            141,
+            303,
+            245,
+            59,
+            252
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "256": {
+        "name": "Leechdens",
+        "adjacency": [
+            452,
+            38,
+            40,
+            241,
+            465,
+            254
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "257": {
+        "name": "Saikinomapass",
+        "adjacency": [
+            449,
+            261,
+            454,
+            463,
+            87,
+            249
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "258": {
+        "name": "Islander's_Route",
+        "adjacency": [
+            259,
+            237,
+            306,
+            275,
+            307,
+            245,
+            255
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "259": {
+        "name": "Sarhaly_Approach",
+        "adjacency": [
+            258,
+            454,
+            264,
+            463,
+            304,
+            272,
+            307,
+            252,
+            253,
+            255
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "260": {
+        "name": "Caydhsadde_Sea",
+        "adjacency": [
+            546,
+            37,
+            455,
+            457,
+            265,
+            246
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "261": {
+        "name": "Sea_of_Lel",
+        "adjacency": [
+            257,
+            263,
+            459,
+            463,
+            466,
+            86,
+            87
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "262": {
+        "name": "Kedwali_Gulf",
+        "adjacency": [
+            34,
+            35,
+            36,
+            455,
+            265,
+            462,
+            271
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "263": {
+        "name": "Katesh_Waters",
+        "adjacency": [
+            261,
+            459,
+            268,
+            461,
+            464,
+            466,
+            507
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "264": {
+        "name": "Wet_Dog_Sea",
+        "adjacency": [
+            259,
+            463,
+            272,
+            466,
+            507
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "265": {
+        "name": "Shores_of_Old_Djinnakah",
+        "adjacency": [
+            546,
+            260,
+            262,
+            455,
+            73,
+            270,
+            271,
+            142,
+            274,
+            467,
+            472
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "266": {
+        "name": "Lai's_Appreach",
+        "adjacency": [
+            41,
+            506,
+            470,
+            254
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "267": {
+        "name": "Cleaved_Sea's_Departure",
+        "adjacency": [
+            481,
+            482,
+            515,
+            460,
+            273,
+            247,
+            251
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "268": {
+        "name": "Lesser_Lament",
+        "adjacency": [
+            33,
+            35,
+            36,
+            263,
+            464,
+            276,
+            507
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "269": {
+        "name": "Tailsight",
+        "adjacency": [
+            237,
+            305,
+            306,
+            275,
+            470,
+            279,
+            473,
+            506
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "270": {
+        "name": "North_Ardmiyan_Sea",
+        "adjacency": [
+            514,
+            546,
+            265,
+            73,
+            115,
+            277,
+            248
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "271": {
+        "name": "Biyoaqoon_sea",
+        "adjacency": [
+            472,
+            265,
+            36,
+            262
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "272": {
+        "name": "Voyager's_Path",
+        "adjacency": [
+            259,
+            264,
+            307,
+            275,
+            276,
+            280,
+            507
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "273": {
+        "name": "Kaydhano_Gulf",
+        "adjacency": [
+            515,
+            267,
+            460,
+            468,
+            26
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "274": {
+        "name": "Eawuba_kayba",
+        "adjacency": [
+            73,
+            265,
+            142,
+            143,
+            308,
+            277
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "275": {
+        "name": "Sea_of_Steam",
+        "adjacency": [
+            258,
+            269,
+            272,
+            306,
+            307,
+            279,
+            280
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "276": {
+        "name": "Worstyear_Sea",
+        "adjacency": [
+            36,
+            268,
+            272,
+            280,
+            507,
+            479
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "277": {
+        "name": "kauvabiyo_Coast",
+        "adjacency": [
+            73,
+            270,
+            274,
+            115,
+            308,
+            479
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "278": {
+        "name": "Surael's_Respite",
+        "adjacency": [
+            281,
+            14,
+            279,
+            473,
+            282,
+            475,
+            476,
+            478
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "279": {
+        "name": "Radiant_Straits",
+        "adjacency": [
+            484,
+            281,
+            269,
+            15,
+            275,
+            278,
+            280,
+            473,
+            284
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "280": {
+        "name": "Thaw's_End",
+        "adjacency": [
+            15,
+            272,
+            115,
+            275,
+            276,
+            279,
+            284,
+            479
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "281": {
+        "name": "Coast_of_timber",
+        "adjacency": [
+            484,
+            491,
+            14,
+            278,
+            279,
+            282
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "282": {
+        "name": "Kila_Toram",
+        "adjacency": [
+            488,
+            491,
+            14,
+            147,
+            278,
+            118,
+            281,
+            283,
+            60,
+            478,
+            287
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "283": {
+        "name": "Yussam_Sea",
+        "adjacency": [
+            487,
+            144,
+            145,
+            146,
+            147,
+            118,
+            282,
+            286
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "284": {
+        "name": "Sunshade_Bay",
+        "adjacency": [
+            484,
+            491,
+            15,
+            279,
+            280,
+            287
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "285": {
+        "name": "Cantish_Sea",
+        "adjacency": [
+            486,
+            489,
+            492,
+            493,
+            114,
+            509
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "286": {
+        "name": "The_Passage",
+        "adjacency": [
+            493,
+            146,
+            118,
+            283,
+            287
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "287": {
+        "name": "Thekvey's_Edge",
+        "adjacency": [
+            491,
+            118,
+            282,
+            284,
+            286
+        ],
+        "type": "ocean",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "288": {
+        "name": "Lioncost",
+        "adjacency": [
+            289,
+            290,
+            198,
+            7,
+            362,
+            191
+        ],
+        "type": "Busilar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "289": {
+        "name": "Hapaine",
+        "adjacency": [
+            288,
+            362,
+            358,
+            191
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4165,
+            886
+        ]
+    },
+    "290": {
+        "name": "Eborthil",
+        "adjacency": [
+            288,
+            200,
+            198,
+            191
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4136,
+            995
+        ]
+    },
+    "291": {
+        "name": "Ekha",
+        "adjacency": [
+            192,
+            194,
+            389,
+            198,
+            396,
+            207
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3857,
+            1018
+        ]
+    },
+    "292": {
+        "name": "Deshak",
+        "adjacency": [
+            200,
+            61,
+            198,
+            389
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4057,
+            1028
+        ]
+    },
+    "293": {
+        "name": "Kudet_Kai",
+        "adjacency": [
+            294,
+            402,
+            533,
+            214
+        ],
+        "type": "Busilar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "294": {
+        "name": "Upper_Keoaden",
+        "adjacency": [
+            224,
+            293,
+            295,
+            402,
+            214,
+            412
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6215,
+            1403
+        ]
+    },
+    "295": {
+        "name": "Non_Chien",
+        "adjacency": [
+            224,
+            512,
+            421,
+            294,
+            431,
+            412
+        ],
+        "type": "Busilar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "296": {
+        "name": "Dagger_Point",
+        "adjacency": [
+            234,
+            116,
+            228,
+            238
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1228,
+            1501
+        ]
+    },
+    "297": {
+        "name": "Region_297",
+        "adjacency": [
+            426,
+            235
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5988,
+            1505
+        ]
+    },
+    "298": {
+        "name": "Sigilan",
+        "adjacency": [
+            225,
+            425,
+            300,
+            301,
+            245,
+            218,
+            415
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3910,
+            1570
+        ]
+    },
+    "299": {
+        "name": "Crooked",
+        "adjacency": [
+            228,
+            238,
+            239
+        ],
+        "type": "Busilar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "300": {
+        "name": "Janama",
+        "adjacency": [
+            425,
+            298,
+            301,
+            302,
+            435,
+            440
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4075,
+            1662
+        ]
+    },
+    "301": {
+        "name": "Sant_Bernal",
+        "adjacency": [
+            298,
+            300,
+            245,
+            302
+        ],
+        "type": "Busilar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "302": {
+        "name": "Ganimeor",
+        "adjacency": [
+            300,
+            301,
+            303,
+            245,
+            440
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4015,
+            1768
+        ]
+    },
+    "303": {
+        "name": "Gemtree",
+        "adjacency": [
+            255,
+            141,
+            302,
+            245,
+            440,
+            447
+        ],
+        "type": "Busilar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "304": {
+        "name": "Sahanafo",
+        "adjacency": [
+            249,
+            259,
+            253,
+            454
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4436,
+            1872
+        ]
+    },
+    "305": {
+        "name": "Curmarket",
+        "adjacency": [
+            237,
+            306,
+            269
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3332,
+            2268
+        ]
+    },
+    "306": {
+        "name": "West_Turtleback",
+        "adjacency": [
+            258,
+            269,
+            237,
+            305,
+            275
+        ],
+        "type": "Busilar",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "307": {
+        "name": "Adinonosy",
+        "adjacency": [
+            272,
+            275,
+            258,
+            259
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4082,
+            2289
+        ]
+    },
+    "308": {
+        "name": "Armanhal",
+        "adjacency": [
+            143,
+            274,
+            467,
+            277,
+            472,
+            479
+        ],
+        "type": "Busilar",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5837,
+            2363
+        ]
+    },
+    "309": {
+        "name": "Trithemar",
+        "adjacency": [
+            523,
+            516,
+            159
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1793,
+            227
+        ]
+    },
+    "310": {
+        "name": "Zongbeikgang",
+        "adjacency": [
+            162,
+            70,
+            166,
+            311,
+            312
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6391,
+            248
+        ]
+    },
+    "311": {
+        "name": "Kokevdan",
+        "adjacency": [
+            323,
+            166,
+            42,
+            46,
+            310,
+            312,
+            319
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "312": {
+        "name": "Ulukungu",
+        "adjacency": [
+            46,
+            70,
+            310,
+            311
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "313": {
+        "name": "Burnt_Thicket",
+        "adjacency": [
+            516,
+            324,
+            520,
+            523,
+            19
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1924,
+            482
+        ]
+    },
+    "314": {
+        "name": "Shevromrzgh",
+        "adjacency": [
+            327,
+            328,
+            108,
+            17,
+            316
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "315": {
+        "name": "Dragon_Dominion",
+        "adjacency": [
+            324,
+            518,
+            330,
+            523,
+            74
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "316": {
+        "name": "Sochuleag",
+        "adjacency": [
+            328,
+            314,
+            108,
+            173
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "317": {
+        "name": "Castonath",
+        "adjacency": [
+            322,
+            325,
+            331,
+            333,
+            110,
+            336,
+            18,
+            338,
+            148,
+            318
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4385,
+            529
+        ]
+    },
+    "318": {
+        "name": "Wyvernhart",
+        "adjacency": [
+            325,
+            110,
+            112,
+            55,
+            317
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "319": {
+        "name": "Bagdagerin",
+        "adjacency": [
+            323,
+            359,
+            42,
+            311,
+            345
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "320": {
+        "name": "Eighard",
+        "adjacency": [
+            519,
+            334,
+            175,
+            527,
+            531,
+            344
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "321": {
+        "name": "Goblin_caves",
+        "adjacency": [
+            113,
+            18,
+            322,
+            17
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "322": {
+        "name": "osdar",
+        "adjacency": [
+            321,
+            333,
+            17,
+            18,
+            148,
+            317
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4531,
+            565
+        ]
+    },
+    "323": {
+        "name": "Oinikhudi",
+        "adjacency": [
+            359,
+            46,
+            47,
+            48,
+            311,
+            319
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "324": {
+        "name": "New_Havoral",
+        "adjacency": [
+            74,
+            523,
+            75,
+            19,
+            313,
+            315,
+            127
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "325": {
+        "name": "ancard",
+        "adjacency": [
+            1,
+            331,
+            332,
+            338,
+            55,
+            317,
+            318
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4277,
+            549
+        ]
+    },
+    "326": {
+        "name": "Eaglecrest",
+        "adjacency": [
+            329,
+            335,
+            528,
+            20,
+            54
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3912,
+            552
+        ]
+    },
+    "327": {
+        "name": "Maghagarma",
+        "adjacency": [
+            328,
+            17,
+            314,
+            346
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4836,
+            648
+        ]
+    },
+    "328": {
+        "name": "Domcharuth",
+        "adjacency": [
+            352,
+            327,
+            363,
+            173,
+            346,
+            339,
+            314,
+            316
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5123,
+            700
+        ]
+    },
+    "329": {
+        "name": "Elkmarch",
+        "adjacency": [
+            326,
+            335,
+            337,
+            179,
+            181,
+            54,
+            342,
+            56
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "330": {
+        "name": "Ranger_Republic",
+        "adjacency": [
+            354,
+            518,
+            74,
+            76,
+            529,
+            315
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "331": {
+        "name": "Araionn",
+        "adjacency": [
+            338,
+            317,
+            325
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "332": {
+        "name": "Ainethil",
+        "adjacency": [
+            1,
+            2,
+            325,
+            338,
+            341
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "333": {
+        "name": "Marrhold",
+        "adjacency": [
+            322,
+            336,
+            17,
+            27,
+            28,
+            317
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "334": {
+        "name": "Clafaidh",
+        "adjacency": [
+            320,
+            355,
+            175,
+            344,
+            184
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            685,
+            640
+        ]
+    },
+    "335": {
+        "name": "Ciderfield",
+        "adjacency": [
+            326,
+            329,
+            528,
+            337,
+            530,
+            343
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "336": {
+        "name": "Blademarches",
+        "adjacency": [
+            333,
+            338,
+            317,
+            28,
+            29
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "337": {
+        "name": "Viswall",
+        "adjacency": [
+            329,
+            335,
+            342,
+            343,
+            120,
+            121
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3882,
+            637
+        ]
+    },
+    "338": {
+        "name": "Gablaine",
+        "adjacency": [
+            325,
+            331,
+            332,
+            336,
+            29,
+            341,
+            349,
+            317,
+            351
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4307,
+            662
+        ]
+    },
+    "339": {
+        "name": "Orkech",
+        "adjacency": [
+            352,
+            328,
+            44,
+            45,
+            173,
+            177,
+            350
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "340": {
+        "name": "Region_340",
+        "adjacency": [
+            530,
+            180,
+            119
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3740,
+            622
+        ]
+    },
+    "341": {
+        "name": "Ibevar_City",
+        "adjacency": [
+            2,
+            3,
+            332,
+            338,
+            349
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4206,
+            664
+        ]
+    },
+    "342": {
+        "name": "Beepeck",
+        "adjacency": [
+            329,
+            337,
+            181,
+            121
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3953,
+            653
+        ]
+    },
+    "343": {
+        "name": "Roysfort",
+        "adjacency": [
+            335,
+            337,
+            530,
+            119,
+            120
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "344": {
+        "name": "Anrachran",
+        "adjacency": [
+            320,
+            353,
+            355,
+            357,
+            334,
+            531,
+            348
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            847,
+            693
+        ]
+    },
+    "345": {
+        "name": "Ghamilbuli_Tervalbi",
+        "adjacency": [
+            359,
+            42,
+            44,
+            366,
+            22,
+            350,
+            319
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5804,
+            833
+        ]
+    },
+    "346": {
+        "name": "Jaaloggub",
+        "adjacency": [
+            328,
+            17,
+            363,
+            327
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4930,
+            803
+        ]
+    },
+    "347": {
+        "name": "Rubyhold",
+        "adjacency": [
+            5,
+            120,
+            121,
+            122,
+            125
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3892,
+            713
+        ]
+    },
+    "348": {
+        "name": "Trimgarb",
+        "adjacency": [
+            357,
+            360,
+            364,
+            531,
+            532,
+            372,
+            344
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "349": {
+        "name": "Arannen",
+        "adjacency": [
+            3,
+            358,
+            338,
+            341,
+            351
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "350": {
+        "name": "Aporlaen",
+        "adjacency": [
+            352,
+            44,
+            366,
+            339,
+            345
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "351": {
+        "name": "Arca_Corvur",
+        "adjacency": [
+            358,
+            361,
+            368,
+            338,
+            349,
+            29
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4323,
+            798
+        ]
+    },
+    "352": {
+        "name": "Irdu_Ageeneas",
+        "adjacency": [
+            328,
+            363,
+            366,
+            339,
+            23,
+            536,
+            350
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "353": {
+        "name": "Faeheartfe'escamn",
+        "adjacency": [
+            344,
+            357
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "354": {
+        "name": "Epednar",
+        "adjacency": [
+            388,
+            360,
+            330,
+            76,
+            529,
+            376
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "355": {
+        "name": "Arakeprun",
+        "adjacency": [
+            357,
+            365,
+            334,
+            149,
+            344,
+            184
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "356": {
+        "name": "FaehearttoAelantiny",
+        "adjacency": [
+            32,
+            361,
+            21,
+            27,
+            30,
+            31
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "357": {
+        "name": "Blastgat",
+        "adjacency": [
+            353,
+            355,
+            364,
+            365,
+            344,
+            348
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            857,
+            834
+        ]
+    },
+    "358": {
+        "name": "Doveswall",
+        "adjacency": [
+            289,
+            3,
+            351,
+            362,
+            368,
+            349,
+            191
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4201,
+            824
+        ]
+    },
+    "359": {
+        "name": "Bazuneizar",
+        "adjacency": [
+            323,
+            377,
+            48,
+            22,
+            345,
+            378,
+            319
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6004,
+            840
+        ]
+    },
+    "360": {
+        "name": "Ghrannblath",
+        "adjacency": [
+            385,
+            354,
+            388,
+            529,
+            372,
+            532,
+            348
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "361": {
+        "name": "Bone_Grove",
+        "adjacency": [
+            356,
+            368,
+            21,
+            29,
+            30,
+            351
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "362": {
+        "name": "Magdalaire",
+        "adjacency": [
+            288,
+            289,
+            3,
+            358,
+            7
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4115,
+            806
+        ]
+    },
+    "363": {
+        "name": "Serpent's_Gift",
+        "adjacency": [
+            352,
+            535,
+            328,
+            367,
+            17,
+            374,
+            23,
+            346
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "364": {
+        "name": "Murdkather",
+        "adjacency": [
+            357,
+            365,
+            372,
+            184,
+            348
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "365": {
+        "name": "Dearktir",
+        "adjacency": [
+            355,
+            357,
+            364,
+            149,
+            184
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "366": {
+        "name": "The's_Aschur",
+        "adjacency": [
+            352,
+            377,
+            22,
+            24,
+            536,
+            345,
+            350
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5722,
+            926
+        ]
+    },
+    "367": {
+        "name": "Nansalen",
+        "adjacency": [
+            32,
+            363,
+            17,
+            21,
+            374
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4786,
+            866
+        ]
+    },
+    "368": {
+        "name": "Re_Uyel",
+        "adjacency": [
+            358,
+            351,
+            200,
+            361,
+            199,
+            21,
+            375,
+            380,
+            191
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4368,
+            945
+        ]
+    },
+    "369": {
+        "name": "Venail",
+        "adjacency": [
+            192,
+            190
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3664,
+            846
+        ]
+    },
+    "370": {
+        "name": "Bramblebank",
+        "adjacency": [
+            75,
+            77,
+            78,
+            373,
+            379,
+            381,
+            127
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1843,
+            877
+        ]
+    },
+    "371": {
+        "name": "Jiantsang",
+        "adjacency": [
+            384,
+            195,
+            47,
+            48,
+            49,
+            378,
+            383
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "372": {
+        "name": "Trimthir",
+        "adjacency": [
+            385,
+            360,
+            364,
+            150,
+            184,
+            348
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "373": {
+        "name": "New_Cestaire",
+        "adjacency": [
+            130,
+            71,
+            204,
+            370,
+            381,
+            127
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1974,
+            956
+        ]
+    },
+    "374": {
+        "name": "Harpylen",
+        "adjacency": [
+            363,
+            367,
+            21,
+            535,
+            537,
+            375
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "375": {
+        "name": "Aqatbar",
+        "adjacency": [
+            199,
+            201,
+            368,
+            21,
+            374,
+            537,
+            380
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4523,
+            961
+        ]
+    },
+    "376": {
+        "name": "Plumwell",
+        "adjacency": [
+            354,
+            388,
+            394,
+            76,
+            77,
+            78,
+            382
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "377": {
+        "name": "Sarilavhan",
+        "adjacency": [
+            387,
+            390,
+            359,
+            366,
+            79,
+            22,
+            24,
+            378
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5860,
+            988
+        ]
+    },
+    "378": {
+        "name": "oni_Hills",
+        "adjacency": [
+            384,
+            359,
+            79,
+            48,
+            81,
+            371,
+            377
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "379": {
+        "name": "South_Marrliande",
+        "adjacency": [
+            203,
+            78,
+            370,
+            502,
+            381
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "380": {
+        "name": "Tungr",
+        "adjacency": [
+            368,
+            199,
+            375
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "381": {
+        "name": "Bridgeway",
+        "adjacency": [
+            204,
+            370,
+            373,
+            502,
+            379
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1854,
+            1026
+        ]
+    },
+    "382": {
+        "name": "Daxwell",
+        "adjacency": [
+            134,
+            394,
+            203,
+            395,
+            78,
+            376
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "383": {
+        "name": "Liuminxiang",
+        "adjacency": [
+            384,
+            97,
+            386,
+            195,
+            392,
+            393,
+            202,
+            80,
+            371
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "384": {
+        "name": "Yunghuun",
+        "adjacency": [
+            80,
+            81,
+            371,
+            378,
+            383
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "385": {
+        "name": "Great_Harafic_Desert",
+        "adjacency": [
+            98,
+            388,
+            360,
+            401,
+            372,
+            150,
+            151
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "386": {
+        "name": "Damaogong",
+        "adjacency": [
+            202,
+            195,
+            383
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6451,
+            1005
+        ]
+    },
+    "387": {
+        "name": "Nadiraj",
+        "adjacency": [
+            390,
+            536,
+            398,
+            24,
+            377,
+            540
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "388": {
+        "name": "Nani_Kinn",
+        "adjacency": [
+            385,
+            354,
+            360,
+            394,
+            401,
+            376,
+            409,
+            414
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1271,
+            1248
+        ]
+    },
+    "389": {
+        "name": "Khasa",
+        "adjacency": [
+            291,
+            292,
+            198,
+            396,
+            61
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "390": {
+        "name": "Yodashikyu",
+        "adjacency": [
+            387,
+            135,
+            398,
+            79,
+            82,
+            404,
+            377
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "391": {
+        "name": "Brasan",
+        "adjacency": [
+            64,
+            201,
+            206,
+            62,
+            537,
+            542
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4653,
+            1161
+        ]
+    },
+    "392": {
+        "name": "Tianlou",
+        "adjacency": [
+            97,
+            393,
+            202,
+            397,
+            400,
+            383
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6379,
+            1116
+        ]
+    },
+    "393": {
+        "name": "Yangchen",
+        "adjacency": [
+            80,
+            392,
+            397,
+            383
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6296,
+            1109
+        ]
+    },
+    "394": {
+        "name": "Tiru_Moine",
+        "adjacency": [
+            388,
+            134,
+            403,
+            376,
+            409,
+            410,
+            382
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1494,
+            1195
+        ]
+    },
+    "395": {
+        "name": "Valorpoint",
+        "adjacency": [
+            134,
+            203,
+            212,
+            502,
+            382
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "396": {
+        "name": "Yaikobix",
+        "adjacency": [
+            291,
+            389,
+            207,
+            213,
+            405,
+            218,
+            61
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "397": {
+        "name": "Hehong",
+        "adjacency": [
+            392,
+            393,
+            399,
+            80,
+            400,
+            533,
+            214
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6316,
+            1223
+        ]
+    },
+    "398": {
+        "name": "Dugajir",
+        "adjacency": [
+            387,
+            390,
+            135,
+            136,
+            540
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "399": {
+        "name": "Zyujyut",
+        "adjacency": [
+            397,
+            80,
+            82,
+            402,
+            533
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "400": {
+        "name": "Iongsim",
+        "adjacency": [
+            392,
+            202,
+            397,
+            214
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "401": {
+        "name": "Nidi_Bikeha",
+        "adjacency": [
+            385,
+            98,
+            99,
+            388,
+            414
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "402": {
+        "name": "Verkal_Ozovar",
+        "adjacency": [
+            293,
+            294,
+            399,
+            82,
+            404,
+            533,
+            412
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6167,
+            1255
+        ]
+    },
+    "403": {
+        "name": "Graveroads",
+        "adjacency": [
+            134,
+            394,
+            212,
+            410,
+            413,
+            222
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "404": {
+        "name": "Xia",
+        "adjacency": [
+            416,
+            417,
+            390,
+            135,
+            82,
+            402,
+            412
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "405": {
+        "name": "West_Sarhal",
+        "adjacency": [
+            65,
+            418,
+            415,
+            425,
+            396,
+            218,
+            61,
+            63
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "406": {
+        "name": "asra",
+        "adjacency": [
+            216,
+            217
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2435,
+            1281
+        ]
+    },
+    "407": {
+        "name": "Bharabagha",
+        "adjacency": [
+            544,
+            411,
+            540,
+            157,
+            223
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5684,
+            1325
+        ]
+    },
+    "408": {
+        "name": "New_Uanced",
+        "adjacency": [
+            8,
+            210,
+            221,
+            215
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3081,
+            1320
+        ]
+    },
+    "409": {
+        "name": "Tumbater",
+        "adjacency": [
+            388,
+            58,
+            9,
+            394,
+            152,
+            410,
+            414
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1341,
+            1333
+        ]
+    },
+    "410": {
+        "name": "quitl",
+        "adjacency": [
+            422,
+            424,
+            394,
+            403,
+            409,
+            58,
+            413
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "411": {
+        "name": "Vanrahar",
+        "adjacency": [
+            136,
+            223,
+            540,
+            407
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "412": {
+        "name": "Sirtan",
+        "adjacency": [
+            416,
+            421,
+            294,
+            295,
+            402,
+            404
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "413": {
+        "name": "Arca_Onyx",
+        "adjacency": [
+            424,
+            239,
+            403,
+            410,
+            222
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1595,
+            1547
+        ]
+    },
+    "414": {
+        "name": "not_named_414",
+        "adjacency": [
+            99,
+            388,
+            401,
+            116,
+            152,
+            409
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1228,
+            1366
+        ]
+    },
+    "415": {
+        "name": "Yzhedvren",
+        "adjacency": [
+            425,
+            218,
+            298,
+            405
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "416": {
+        "name": "Tuan_Caoban",
+        "adjacency": [
+            417,
+            420,
+            421,
+            426,
+            404,
+            412
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6026,
+            1413
+        ]
+    },
+    "417": {
+        "name": "Basaatele",
+        "adjacency": [
+            416,
+            420,
+            229,
+            102,
+            135,
+            230,
+            137,
+            404
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5961,
+            1382
+        ]
+    },
+    "418": {
+        "name": "Golutzarr",
+        "adjacency": [
+            65,
+            66,
+            425,
+            429,
+            432,
+            405
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4279,
+            1524
+        ]
+    },
+    "419": {
+        "name": "Kogzalla",
+        "adjacency": [
+            423,
+            427,
+            430,
+            433,
+            25,
+            543
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5140,
+            1578
+        ]
+    },
+    "420": {
+        "name": "Pralung",
+        "adjacency": [
+            416,
+            417,
+            229,
+            102,
+            426
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5988,
+            1404
+        ]
+    },
+    "421": {
+        "name": "Jaya_Raya",
+        "adjacency": [
+            416,
+            295,
+            426,
+            431,
+            412
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "422": {
+        "name": "Loversight",
+        "adjacency": [
+            424,
+            58,
+            228,
+            410
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1365,
+            1475
+        ]
+    },
+    "423": {
+        "name": "koggraffa",
+        "adjacency": [
+            419,
+            428,
+            430,
+            219,
+            543
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "424": {
+        "name": "Minar_Yolli",
+        "adjacency": [
+            228,
+            422,
+            239,
+            410,
+            413
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "425": {
+        "name": "Jorrikarr",
+        "adjacency": [
+            418,
+            298,
+            300,
+            432,
+            435,
+            405,
+            415
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4191,
+            1556
+        ]
+    },
+    "426": {
+        "name": "Baihon",
+        "adjacency": [
+            416,
+            420,
+            229,
+            421,
+            297,
+            235,
+            431
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "427": {
+        "name": "Mazexhad",
+        "adjacency": [
+            67,
+            419,
+            433,
+            434,
+            25
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "428": {
+        "name": "Berparwedeb",
+        "adjacency": [
+            423,
+            233,
+            430,
+            90,
+            219
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5394,
+            1506
+        ]
+    },
+    "429": {
+        "name": "Jagab_Faru",
+        "adjacency": [
+            418,
+            66,
+            69,
+            140,
+            432,
+            438
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "430": {
+        "name": "Hisost_Yamok",
+        "adjacency": [
+            419,
+            423,
+            428,
+            433,
+            90,
+            92,
+            93
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "431": {
+        "name": "Arawkelin",
+        "adjacency": [
+            512,
+            421,
+            295,
+            426,
+            235,
+            236
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6043,
+            1588
+        ]
+    },
+    "432": {
+        "name": "Fojara",
+        "adjacency": [
+            418,
+            425,
+            429,
+            435,
+            438,
+            442
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4330,
+            1645
+        ]
+    },
+    "433": {
+        "name": "Yezel_Mora",
+        "adjacency": [
+            419,
+            427,
+            430,
+            434,
+            83,
+            84,
+            85,
+            92
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5164,
+            1705
+        ]
+    },
+    "434": {
+        "name": "Duwarkani",
+        "adjacency": [
+            67,
+            427,
+            433,
+            83,
+            436,
+            439
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "435": {
+        "name": "Kaino_Federation",
+        "adjacency": [
+            425,
+            300,
+            432,
+            440,
+            441,
+            442
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "436": {
+        "name": "Samsubat",
+        "adjacency": [
+            66,
+            67,
+            68,
+            434,
+            439,
+            445
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "437": {
+        "name": "ozgar",
+        "adjacency": [
+            545,
+            451,
+            452,
+            232,
+            240,
+            241,
+            443,
+            446
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2168,
+            1902
+        ]
+    },
+    "438": {
+        "name": "Port_Narawen",
+        "adjacency": [
+            140,
+            429,
+            432,
+            249,
+            442,
+            253
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4393,
+            1780
+        ]
+    },
+    "439": {
+        "name": "Hakhepra",
+        "adjacency": [
+            434,
+            83,
+            436,
+            86,
+            445
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "440": {
+        "name": "Tamasada",
+        "adjacency": [
+            300,
+            302,
+            303,
+            435,
+            441,
+            447
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "441": {
+        "name": "Adaru",
+        "adjacency": [
+            448,
+            450,
+            11,
+            435,
+            534,
+            440,
+            442,
+            447
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4183,
+            1751
+        ]
+    },
+    "442": {
+        "name": "Marid's_Delta",
+        "adjacency": [
+            11,
+            432,
+            435,
+            438,
+            441,
+            252,
+            253
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4279,
+            1761
+        ]
+    },
+    "443": {
+        "name": "Jibira'en",
+        "adjacency": [
+            241,
+            452,
+            437
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "444": {
+        "name": "ameza",
+        "adjacency": [
+            449,
+            68,
+            69,
+            140,
+            249
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "445": {
+        "name": "Muzingrazi",
+        "adjacency": [
+            449,
+            68,
+            436,
+            86,
+            439,
+            87
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "446": {
+        "name": "Yaruhol",
+        "adjacency": [
+            240,
+            250,
+            451,
+            437
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "447": {
+        "name": "Nakowich",
+        "adjacency": [
+            448,
+            141,
+            303,
+            440,
+            441,
+            59
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4107,
+            1776
+        ]
+    },
+    "448": {
+        "name": "Jenko",
+        "adjacency": [
+            441,
+            450,
+            59,
+            447
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "449": {
+        "name": "Zuvavim",
+        "adjacency": [
+            257,
+            68,
+            87,
+            249,
+            444,
+            445
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4575,
+            1838
+        ]
+    },
+    "450": {
+        "name": "selcost",
+        "adjacency": [
+            448,
+            534,
+            441,
+            59,
+            252,
+            255
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4190,
+            1820
+        ]
+    },
+    "451": {
+        "name": "Urancestir",
+        "adjacency": [
+            452,
+            460,
+            465,
+            468,
+            437,
+            250,
+            446
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1859,
+            2007
+        ]
+    },
+    "452": {
+        "name": "Marukhan",
+        "adjacency": [
+            256,
+            451,
+            241,
+            465,
+            437,
+            443
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2422,
+            1856
+        ]
+    },
+    "453": {
+        "name": "Goufeingong",
+        "adjacency": [
+            457,
+            455,
+            94,
+            246
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5741,
+            1843
+        ]
+    },
+    "454": {
+        "name": "Maponosy",
+        "adjacency": [
+            257,
+            259,
+            463,
+            304,
+            249
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "455": {
+        "name": "Thunder_Wielding_Buffalo",
+        "adjacency": [
+            96,
+            260,
+            453,
+            262,
+            457,
+            265,
+            462,
+            94,
+            95
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "456": {
+        "name": "Tazas",
+        "adjacency": [
+            458,
+            461,
+            462,
+            464,
+            84,
+            85
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "457": {
+        "name": "Joenghoenggong",
+        "adjacency": [
+            260,
+            453,
+            246,
+            455
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5737,
+            1907
+        ]
+    },
+    "458": {
+        "name": "Adzalan",
+        "adjacency": [
+            96,
+            456,
+            462,
+            85,
+            92
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "459": {
+        "name": "Karshyr",
+        "adjacency": [
+            261,
+            263,
+            461,
+            83,
+            86,
+            88
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "460": {
+        "name": "Amadia",
+        "adjacency": [
+            451,
+            267,
+            273,
+            468,
+            250,
+            251
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "461": {
+        "name": "Kataritsaya",
+        "adjacency": [
+            263,
+            456,
+            459,
+            464,
+            84,
+            88
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "462": {
+        "name": "Kashyzir",
+        "adjacency": [
+            96,
+            33,
+            34,
+            262,
+            455,
+            456,
+            458,
+            464
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "463": {
+        "name": "Ibidintely",
+        "adjacency": [
+            257,
+            259,
+            261,
+            454,
+            264,
+            466
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4570,
+            2015
+        ]
+    },
+    "464": {
+        "name": "Nazhni",
+        "adjacency": [
+            33,
+            263,
+            456,
+            268,
+            461,
+            462
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5132,
+            2038
+        ]
+    },
+    "465": {
+        "name": "Sel'Parura",
+        "adjacency": [
+            256,
+            451,
+            452,
+            40,
+            468,
+            469,
+            474
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "466": {
+        "name": "Anaqniltra",
+        "adjacency": [
+            261,
+            263,
+            264,
+            463,
+            507
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4706,
+            2070
+        ]
+    },
+    "467": {
+        "name": "Hortosare",
+        "adjacency": [
+            265,
+            142,
+            143,
+            308,
+            472
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5858,
+            2196
+        ]
+    },
+    "468": {
+        "name": "Cymbeahn",
+        "adjacency": [
+            451,
+            26,
+            460,
+            465,
+            273,
+            474,
+            477
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1713,
+            2252
+        ]
+    },
+    "469": {
+        "name": "East_Effelai",
+        "adjacency": [
+            39,
+            40,
+            465,
+            471,
+            474,
+            475,
+            476
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "470": {
+        "name": "Drakesguard",
+        "adjacency": [
+            41,
+            266,
+            269,
+            471,
+            473,
+            506
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "471": {
+        "name": "Thavo'i",
+        "adjacency": [
+            39,
+            41,
+            469,
+            470,
+            473,
+            476
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "472": {
+        "name": "Ardim_Oarast",
+        "adjacency": [
+            36,
+            265,
+            271,
+            467,
+            308,
+            479
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            5663,
+            2255
+        ]
+    },
+    "473": {
+        "name": "Kiohalen",
+        "adjacency": [
+            471,
+            269,
+            279,
+            278,
+            470,
+            476
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3072,
+            2462
+        ]
+    },
+    "474": {
+        "name": "Enlarmai",
+        "adjacency": [
+            480,
+            465,
+            468,
+            469,
+            475,
+            477,
+            478
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2216,
+            2356
+        ]
+    },
+    "475": {
+        "name": "Darmaz",
+        "adjacency": [
+            469,
+            278,
+            474,
+            476,
+            478
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2553,
+            2350
+        ]
+    },
+    "476": {
+        "name": "Rezankaz",
+        "adjacency": [
+            469,
+            278,
+            471,
+            473,
+            475
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2743,
+            2376
+        ]
+    },
+    "477": {
+        "name": "Clematar",
+        "adjacency": [
+            480,
+            26,
+            483,
+            468,
+            474,
+            155
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "478": {
+        "name": "Eastern_Taychend",
+        "adjacency": [
+            480,
+            487,
+            488,
+            474,
+            145,
+            278,
+            282,
+            475
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "479": {
+        "name": "Ardmiyan_Republic",
+        "adjacency": [
+            280,
+            36,
+            115,
+            276,
+            308,
+            277,
+            472
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "480": {
+        "name": "Caergaraen",
+        "adjacency": [
+            483,
+            487,
+            144,
+            146,
+            474,
+            477,
+            478
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "481": {
+        "name": "Oktikheion",
+        "adjacency": [
+            482,
+            515,
+            485,
+            486,
+            267
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1356,
+            2518
+        ]
+    },
+    "482": {
+        "name": "not_named_482",
+        "adjacency": [
+            481,
+            485,
+            267,
+            492,
+            247
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "483": {
+        "name": "Upper_Chendya",
+        "adjacency": [
+            480,
+            490,
+            146,
+            155,
+            477
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "484": {
+        "name": "Greencrest",
+        "adjacency": [
+            281,
+            491,
+            284,
+            279
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "485": {
+        "name": "kheios_mountains",
+        "adjacency": [
+            481,
+            482,
+            492,
+            486
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "486": {
+        "name": "Degakheion",
+        "adjacency": [
+            481,
+            515,
+            485,
+            492,
+            285,
+            508,
+            509
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1383,
+            2648
+        ]
+    },
+    "487": {
+        "name": "Klerechend",
+        "adjacency": [
+            480,
+            144,
+            145,
+            283,
+            478
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "488": {
+        "name": "Degithion",
+        "adjacency": [
+            145,
+            147,
+            282,
+            60,
+            478
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2381,
+            2616
+        ]
+    },
+    "489": {
+        "name": "Eneion",
+        "adjacency": [
+            509,
+            490,
+            493,
+            155,
+            285
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1634,
+            2746
+        ]
+    },
+    "490": {
+        "name": "Mteibhara",
+        "adjacency": [
+            483,
+            489,
+            493,
+            146,
+            155
+        ],
+        "type": "neutral",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "491": {
+        "name": "Timberneck",
+        "adjacency": [
+            484,
+            281,
+            282,
+            284,
+            287
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2773,
+            2742
+        ]
+    },
+    "492": {
+        "name": "urartola",
+        "adjacency": [
+            482,
+            485,
+            486,
+            114,
+            247,
+            285
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1168,
+            2728
+        ]
+    },
+    "493": {
+        "name": "Deyeion",
+        "adjacency": [
+            489,
+            490,
+            146,
+            285,
+            286
+        ],
+        "type": "neutral",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1755,
+            2848
+        ]
+    },
+    "494": {
+        "name": "Jerkhazuura",
+        "adjacency": [
+            161,
+            162,
+            115
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            6817,
+            78
+        ]
+    },
+    "495": {
+        "name": "Nyhofn",
+        "adjacency": [
+            160,
+            167,
+            164,
+            159
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2399,
+            172
+        ]
+    },
+    "496": {
+        "name": "Lonely_Isle",
+        "adjacency": [
+            160,
+            170,
+            174,
+            167
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3288,
+            376
+        ]
+    },
+    "497": {
+        "name": "Forlorn_Isle",
+        "adjacency": [
+            178,
+            171,
+            174
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2606,
+            536
+        ]
+    },
+    "498": {
+        "name": "Far_Isle",
+        "adjacency": [
+            182,
+            174,
+            183
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3452,
+            706
+        ]
+    },
+    "499": {
+        "name": "Einnsag",
+        "adjacency": [
+            184,
+            114,
+            175
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            526,
+            732
+        ]
+    },
+    "500": {
+        "name": "Silsenaire",
+        "adjacency": [
+            193,
+            189
+        ],
+        "type": "island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "501": {
+        "name": "Lastsight",
+        "adjacency": [
+            192,
+            187,
+            182,
+            208
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3117,
+            1022
+        ]
+    },
+    "502": {
+        "name": "Concord_Point",
+        "adjacency": [
+            203,
+            204,
+            205,
+            395,
+            212,
+            379,
+            381
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            1840,
+            1049
+        ]
+    },
+    "503": {
+        "name": "Eor_Islands",
+        "adjacency": [
+            184,
+            209,
+            114,
+            220
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            589,
+            1212
+        ]
+    },
+    "504": {
+        "name": "North_Wanderer",
+        "adjacency": [
+            208,
+            221,
+            225,
+            213
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3480,
+            1354
+        ]
+    },
+    "505": {
+        "name": "Pawprint",
+        "adjacency": [
+            225,
+            218,
+            213
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3796,
+            1404
+        ]
+    },
+    "506": {
+        "name": "Thamusand",
+        "adjacency": [
+            266,
+            269,
+            237,
+            470,
+            254
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            2900,
+            2077
+        ]
+    },
+    "507": {
+        "name": "Teramzadai",
+        "adjacency": [
+            263,
+            264,
+            268,
+            272,
+            466,
+            276
+        ],
+        "type": "island",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            4755,
+            2271
+        ]
+    },
+    "508": {
+        "name": "Vothelisi",
+        "adjacency": [
+            515,
+            486,
+            26,
+            156,
+            509
+        ],
+        "type": "island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "509": {
+        "name": "Aniskheion",
+        "adjacency": [
+            486,
+            489,
+            508,
+            155,
+            156,
+            285
+        ],
+        "type": "island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "510": {
+        "name": "Nur_Tel",
+        "adjacency": [
+            232,
+            205,
+            212,
+            216,
+            511
+        ],
+        "type": "Busilar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2132,
+            1217
+        ]
+    },
+    "511": {
+        "name": "Tropaicost",
+        "adjacency": [
+            232,
+            212,
+            13,
+            510
+        ],
+        "type": "Busilar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1961,
+            1437
+        ]
+    },
+    "512": {
+        "name": "Kiubang",
+        "adjacency": [
+            224,
+            295,
+            72,
+            236,
+            431,
+            117,
+            248
+        ],
+        "type": "Busilar island",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "513": {
+        "name": "Bristailean",
+        "adjacency": [
+            251,
+            244,
+            238
+        ],
+        "type": "Busilar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1277,
+            1724
+        ]
+    },
+    "514": {
+        "name": "Gitinalas",
+        "adjacency": [
+            546,
+            72,
+            270,
+            117,
+            248
+        ],
+        "type": "Busilar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            6180,
+            1979
+        ]
+    },
+    "515": {
+        "name": "Anisigo",
+        "adjacency": [
+            481,
+            486,
+            267,
+            273,
+            26,
+            508
+        ],
+        "type": "Busilar island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            1487,
+            2486
+        ]
+    },
+    "516": {
+        "name": "Sjavarrust",
+        "adjacency": [
+            164,
+            517,
+            520,
+            523,
+            309,
+            313,
+            159
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "517": {
+        "name": "Derhildia",
+        "adjacency": [
+            164,
+            516,
+            520,
+            521,
+            171,
+            524,
+            52
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "518": {
+        "name": "Noo_Codorran",
+        "adjacency": [
+            165,
+            330,
+            523,
+            529,
+            315,
+            159
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "519": {
+        "name": "Marathmas",
+        "adjacency": [
+            320,
+            527,
+            165,
+            175
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            856,
+            432
+        ]
+    },
+    "520": {
+        "name": "Ollorland",
+        "adjacency": [
+            516,
+            517,
+            524,
+            19,
+            313
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "521": {
+        "name": "Fjelstron",
+        "adjacency": [
+            171,
+            524,
+            517
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            2410,
+            454
+        ]
+    },
+    "522": {
+        "name": "Dragonspine",
+        "adjacency": [
+            168,
+            525,
+            526,
+            528,
+            20,
+            53
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "523": {
+        "name": "Hehadedpar",
+        "adjacency": [
+            516,
+            324,
+            518,
+            309,
+            313,
+            315,
+            159
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "524": {
+        "name": "Noo_Oddansbay",
+        "adjacency": [
+            517,
+            520,
+            521,
+            171,
+            176,
+            19
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            2321,
+            473
+        ]
+    },
+    "525": {
+        "name": "Oddansbay",
+        "adjacency": [
+            168,
+            170,
+            522,
+            528
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3656,
+            473
+        ]
+    },
+    "526": {
+        "name": "Kobildzan",
+        "adjacency": [
+            528,
+            522,
+            20
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "None",
+        "center_location": [
+            3943,
+            488
+        ]
+    },
+    "527": {
+        "name": "Gemradcurt",
+        "adjacency": [
+            320,
+            165,
+            519,
+            531,
+            532
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "528": {
+        "name": "Royvibobb",
+        "adjacency": [
+            326,
+            522,
+            170,
+            525,
+            526,
+            335,
+            530,
+            20
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            3857,
+            558
+        ]
+    },
+    "529": {
+        "name": "not_named_529",
+        "adjacency": [
+            354,
+            165,
+            518,
+            360,
+            330,
+            532
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1214,
+            763
+        ]
+    },
+    "530": {
+        "name": "Manerd",
+        "adjacency": [
+            170,
+            335,
+            528,
+            180,
+            340,
+            119,
+            343
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            3810,
+            577
+        ]
+    },
+    "531": {
+        "name": "Jhorgashirr",
+        "adjacency": [
+            320,
+            527,
+            532,
+            344,
+            348
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "532": {
+        "name": "Snecholle",
+        "adjacency": [
+            165,
+            360,
+            527,
+            529,
+            531,
+            348
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            1046,
+            687
+        ]
+    },
+    "533": {
+        "name": "Zyugong",
+        "adjacency": [
+            293,
+            397,
+            399,
+            402,
+            214
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            6251,
+            1282
+        ]
+    },
+    "534": {
+        "name": "Revers",
+        "adjacency": [
+            441,
+            450,
+            11,
+            252
+        ],
+        "type": "Gnomish_Hierarchy",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4216,
+            1784
+        ]
+    },
+    "535": {
+        "name": "Jaddanzar",
+        "adjacency": [
+            363,
+            374,
+            23,
+            537,
+            539
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            4840,
+            1098
+        ]
+    },
+    "536": {
+        "name": "Mermigan",
+        "adjacency": [
+            352,
+            387,
+            366,
+            23,
+            24,
+            538,
+            540,
+            541
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5477,
+            1111
+        ]
+    },
+    "537": {
+        "name": "Bulwar",
+        "adjacency": [
+            535,
+            391,
+            201,
+            374,
+            375,
+            539,
+            542
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            4783,
+            1120
+        ]
+    },
+    "538": {
+        "name": "Azka_Sur",
+        "adjacency": [
+            23,
+            536,
+            539,
+            541,
+            543
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "539": {
+        "name": "Upper_Suran",
+        "adjacency": [
+            535,
+            23,
+            537,
+            538,
+            542,
+            543
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "540": {
+        "name": "Nahana_Jadd",
+        "adjacency": [
+            544,
+            387,
+            136,
+            398,
+            407,
+            536,
+            411,
+            541
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "541": {
+        "name": "Avhaubhiya",
+        "adjacency": [
+            544,
+            536,
+            538,
+            219,
+            540,
+            543
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": true,
+        "unit": "army",
+        "center_location": [
+            5573,
+            1302
+        ]
+    },
+    "542": {
+        "name": "Ardu",
+        "adjacency": [
+            64,
+            391,
+            537,
+            539,
+            25,
+            543
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "543": {
+        "name": "Ilzin_Zokka",
+        "adjacency": [
+            419,
+            423,
+            219,
+            25,
+            538,
+            539,
+            541,
+            542
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            5199,
+            1338
+        ]
+    },
+    "544": {
+        "name": "Sark",
+        "adjacency": [
+            157,
+            407,
+            219,
+            540,
+            541
+        ],
+        "type": "Jaddanzuir",
+        "is_supply_center": false,
+        "unit": "None",
+        "center_location": null
+    },
+    "545": {
+        "name": "Far_plenty",
+        "adjacency": [
+            232,
+            240,
+            13,
+            437
+        ],
+        "type": "Gnomish_Hierarchy island",
+        "is_supply_center": false,
+        "unit": "army",
+        "center_location": null
+    },
+    "546": {
+        "name": "Crescent_Line",
+        "adjacency": [
+            514,
+            260,
+            72,
+            265,
+            270,
+            246
+        ],
+        "type": "Gnomish_Hierarchy island",
+        "is_supply_center": true,
+        "unit": "fleet",
+        "center_location": [
+            6002,
+            2043
+        ]
+    }
+}

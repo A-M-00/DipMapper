@@ -33,7 +33,7 @@ COLOR_REGION_TYPE_MAPPING = { #Modify this with your variant's powers and colour
     (106, 174, 150): "Danggun",
     (131, 72, 56): "Dragon_Command",
     (134, 172, 141): "Khatalashya",
-    (86, 129, 167): "Qasr_Baashidi",
+    (86, 129, 167): "Umoji_Baashidi",
     (143, 214, 214): "Melakmengi",
     (102, 189, 186): "Nur_Dhanaenn",
     (185, 125, 255): "Ameion",
@@ -53,7 +53,7 @@ COLOR_REGION_TYPE_MAPPING = { #Modify this with your variant's powers and colour
     (108, 196, 168): "Danggun island",
     (1, 101, 122): "Dragon_Command island",
     (92, 127, 0): "Khatalashya island",
-    (91, 142, 190): "Qasr_Baashidi island",
+    (91, 142, 190): "Umoji_Baashidi island",
     (137, 30, 30): "Melakmengi island",
     (129, 50, 255): "Nur_Dhanaenn island",
     (172, 109, 225): "Ameion island",
@@ -78,7 +78,7 @@ POWER_INITIALS_MAPPING = { # Relevant only for Realpolitik output, can be ignore
     "Danggun": 'D',
     "Dragon Command": 'C',
     "Khatalashya": 'Z',
-    "Qasr Baashidi": 'Q',
+    "Umoji Baashidi": 'Q',
     "Melakmengi": 'M',
     "Nur Dhanaenn": 'N',
     "Ameion": 'I',
@@ -88,9 +88,9 @@ POWER_INITIALS_MAPPING = { # Relevant only for Realpolitik output, can be ignore
 }
 
 CAPITALS = {
-    "Northern League": 'Gaweton',
+    "Northern_League": 'Gaweton',
     "Lorent": 'Lorentaine',
-    "Gnomish Hierarchy": 'Oddansbay',
+    "Gnomish_Hierarchy": 'Oddansbay',
     "Busilar": 'Hapaine',
     "Anbennar": 'Anbenncost',
     "Grombar": 'Garok',
@@ -99,14 +99,14 @@ CAPITALS = {
     "Jaddanzuir": 'Jaddanzar',
     "Kalsyto": 'Qarshtuluu',
     "Danggun": 'Jaengujan',
-    "Dragon Command": 'Nozanyanbe',
+    "Dragon_Command": 'Nozanyanbe',
     "Khatalashya": 'Zerat',
-    "Qasr Baashidi": 'Maroodiya',
+    "Umoji_Baashidi": 'Maroodiya',
     "Melakmengi": 'Krekdekei',
-    "Nur Dhanaenn": 'Dalaine',
+    "Nur_Dhanaenn": 'Dalaine',
     "Ameion": 'Ameoin',
-    "Sarda Empire": 'Arverynn',
-    "Vanbury Steel Guild": 'Ricardsport',
+    "Sarda_Empire": 'Arverynn',
+    "Vanbury_Steel_Guild": 'Ricardsport',
     "Triarchy": 'Vemod_Arka',
 }
 
@@ -505,7 +505,7 @@ def determine_type(label, info, combined_region_information):
 
     if is_land(info["type"]):
         for neighbor_label in info["adjacency"]:
-            if is_ocean(combined_region_information[neighbor_label]["type"]):
+            if is_ocean(combined_region_information[neighbor_label]["type"] or is_island(combined_region_information[neighbor_label]["type"])):
                 return "coast"
             
     if is_ocean(info["type"]):
@@ -575,6 +575,7 @@ def build_dico(combined_region_information):
 
 def build_output(combined_region_information):
     output = {}
+    name_counts = defaultdict(int)
     label_to_name = build_dico(combined_region_information)
 
     counts = np.bincount(bg_labels.ravel())
@@ -673,7 +674,14 @@ def build_output(combined_region_information):
         retreat = [float(y2), float(x2)]
         area = int(counts[label])
 
-        output[province_name] = {
+        name_counts[province_name] += 1
+
+        if name_counts[province_name] == 1:
+            key = province_name
+        else:
+            key = f"{province_name}_{name_counts[province_name]}"
+
+        output[key] = {
             "ID": label,
             "area": area,  # size of the province in pixels. Unsure what it's used for.
             "edges": edges,
@@ -724,7 +732,7 @@ def build_player_file(combined_region_information, filename):
         }
         capital = CAPITALS.get(power)
         if capital:
-            yaml_output[power]["capital"] = capital
+            yaml_output[power]["capital"] = capital.upper()
 
     with open(filename, "w") as f:
         yaml.dump(

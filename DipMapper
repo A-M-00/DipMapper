@@ -64,6 +64,13 @@ COLOR_REGION_TYPE_MAPPING = { #Modify this with your variant's powers and colour
     (149, 185, 181): "High Seas"
 }
 
+overrides = {
+        "Than": "Ikan",
+        "Teaye": "Tzaya",
+        "Slegest": "Slegcal"
+        # Add more overrides as needed
+    }
+
 POWER_INITIALS_MAPPING = { # Relevant only for Realpolitik output, can be ignored if using DigiDiplo.
     "Northern League": 'R',
     "Lorent": 'L',
@@ -125,7 +132,7 @@ SPACE_REPLACER = "_" # Since spaces can cause issues in adjacency lists, we remo
 
 MULTICOLOUR_PROVINCES = False # NOT FULLY IMPLEMENTED:Set to True if your map uses multiple colors per province (e.g. a border color). Might make province recognition less reliable in some parts, especially when it comes to connecting islands.
 
-RUN_MODE = "full" # options are "debug", "full", "first_half", "second_half"
+RUN_MODE = "first_half" # options are "debug", "full", "first_half", "second_half"
 
 DEBUG = RUN_MODE == "debug"
 
@@ -273,16 +280,6 @@ def parse_names_debug(labeled_names, ndlabels, names_image):
 
     return parsed_names
 
-def name_overrides(name):
-    # If your map has certain names that are consistently misread by OCR, and are too far off for the fuzzy-matching to fix, you can add manual overrides here.
-    overrides = {
-        "Than": "Ikan",
-        "Teaye": "Tzaya",
-        "Slegest": "Slegcal"
-        # Add more overrides as needed
-    }
-    return overrides.get(name, None)
-
 
 def parse_names(labeled_names, ndlabels, names_image):
     # Uses pytesseract to parse province names from the names image, using the labeled regions to isolate each name. Make sure names don't overlap between provinces, or you might need to edit those manually.
@@ -317,8 +314,12 @@ def parse_names(labeled_names, ndlabels, names_image):
         
         match, score = process.extractOne(name, province_names, scorer=fuzz.ratio)
 
-        if(name_overrides(name) != None):
-            name_to_labels[name_overrides(name)].append(props.label)
+        override = overrides.get(name, None)
+
+        if(override is not None):
+            print(f"Overriding OCR result for region {props.label}: '{name}' -> '{override}'", file=sys.stderr)
+            parsed_names[props.label] = override
+            name_to_labels[override].append(props.label)
         elif score <= 65:
             print(f"No good match for region {props.label}: '{name}'. Closest would be '{match}' (score: {score})", file=sys.stderr)
             parsed_names[props.label] = name  # Use raw OCR result if confidence is low
